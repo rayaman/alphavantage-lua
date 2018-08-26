@@ -1,8 +1,20 @@
-local https = require("ssl.https")
 local bin = require("bin")
 local alpha = {}
 alpha.APIKey = ""
-function string:split( inSplitPattern, outResults)
+local _,https = pcall(require,"ssl.https")
+local _,luajitrequest = pcall(require,"luajit-request")
+local request
+if https then
+	function request(url)
+		return https.request(url)
+	end
+end
+if luajitrequest and not https then
+	function request(url)
+		return luajitrequest.send(url).body
+	end
+end
+function string:split(inSplitPattern, outResults)
 	if not outResults then
 		outResults = {}
 	end
@@ -24,7 +36,7 @@ function alpha.getPhysicalCurrencyList(force)
 	if bin.fileExists("PCL.dat") and not force then
 		dat = bin.load("PCL.dat").data
 	else
-		dat = https.request("https://www.alphavantage.co/physical_currency_list/")
+		dat = request("https://www.alphavantage.co/physical_currency_list/")
 		bin.new(dat):tofile("PCL.dat")
 	end
 	if alpha.pcl then return alpha.pcl end
@@ -43,7 +55,7 @@ function alpha.getDigitalCurrencyList(force)
 	if bin.fileExists("DCL.dat") and not force then
 		dat = bin.load("DCL.dat").data
 	else
-		dat = https.request("https://www.alphavantage.co/digital_currency_list/")
+		dat = request("https://www.alphavantage.co/digital_currency_list/")
 		bin.new(dat):tofile("DCL.dat")
 	end
 	if alpha.dcl then return alpha.dcl end
@@ -58,20 +70,21 @@ function alpha.getDigitalCurrencyList(force)
 	return c
 end
 function alpha.dataToTable(data)
-	local c = {}
-	local order = {}
+	local c = {
+		MetaData = {},
+		History = {}
+	}
 	local lines = data:lines(str)
 	local tab = {}
 	local tag = lines[1]:split(",")
 	for i = 2,#lines-1 do
 		tab = lines[i]:split(",")
-		c[tab[1]]={}
+		local t={}
+		c.History[#c.History+1]=t
 		for e = 1,#tag do
-			order[#order+1]=tab[1]
-			c[tab[1]][tag[e]]=tab[e]
+			t[tag[e]]=tab[e]
 		end
 	end
-	c.order = order
 	return c
 end
 local function simpleparse(command,symbols,outputsize,interval)
@@ -89,11 +102,15 @@ local function simpleparse(command,symbols,outputsize,interval)
 	end
 	for i=1,#symbols do
 		cmd = "https://www.alphavantage.co/query?function="..command.."&symbol="..symbols[i].."&datatype=csv&apikey="..alpha.APIKey..outputsize..str
-		dat = https.request(cmd)
+		dat = request(cmd)
 		if dat:find("Invalid API call") then
 			return nil, "Invalid API call"
 		else
-			data[symbols[i]]=alpha.dataToTable(dat)
+			data[i]=alpha.dataToTable(dat)
+			data[i].MetaData = {
+				Symbol = symbols[i],
+				MostRecentData = data[i].History[1]
+			}
 		end
 	end
 	return data
@@ -122,6 +139,30 @@ end
 function alpha.timeSeriesMonthlyAdjusted(symbols,outputsize)
 	return simpleparse("TIME_SERIES_MONTHLY_ADJUSTED",symbols,outputsize)
 end
+-- api.GLOBAL_QUOTE
+function alpha.globalQuote(symbols)
+	local cmd
+	local data = {}
+	if type(symbols)=="string" then
+		symbols = {symbols}
+	end
+	local str = ""
+	for i=1,#symbols do
+		cmd = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol="..symbols[i].."&datatype=csv&apikey="..alpha.APIKey
+		dat = request(cmd)
+		print(dat)
+		if dat:find("Invalid API call") then
+			return nil, "Invalid API call"
+		else
+			data[i]=alpha.dataToTable(dat)
+			data[i].MetaData = {
+				Symbol = symbols[i],
+				MostRecentData = data[i].History[1]
+			}
+		end
+	end
+	return data
+end
 -- api.TIME_SERIES_INTRADAY
 local _interval = {
 	["1min"]=true,
@@ -143,7 +184,7 @@ end
 
 -- api.CURRENCY_EXCHANGE_RATE
 function alpha.currencyExchangeRate(from,to)
-	local dat = https.request("https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency="..from.."&to_currency="..to.."&apikey="..alpha.APIKey)
+	local dat = request("https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency="..from.."&to_currency="..to.."&apikey="..alpha.APIKey)
 	if dat:find("Invalid API call") then
 		return nil, "Invalid API call"
 	else
@@ -162,14 +203,14 @@ local function simpleFXParse(cmd,from,to,interval,outputsize)
 		outputsize = "&outputsize="..outputsize
 	end
 	interval = interval or ""
-	print("https://www.alphavantage.co/query?function="..cmd.."&from_symbol="..from.."&to_symbol="..to..interval.."&apikey="..alpha.APIKey.."&datatype=csv"..outputsize)
-	local dat = https.request("https://www.alphavantage.co/query?function="..cmd.."&from_symbol="..from.."&to_symbol="..to..interval.."&apikey="..alpha.APIKey.."&datatype=csv"..outputsize)
+	local dat = request("https://www.alphavantage.co/query?function="..cmd.."&from_symbol="..from.."&to_symbol="..to..interval.."&apikey="..alpha.APIKey.."&datatype=csv"..outputsize)
 	if dat:find("Invalid API call") then
 		return nil, "Invalid API call"
 	else
 		local data = alpha.dataToTable(dat)
-		data.From = from
-		data.To = to
+		data.MetaData.From = from
+		data.MetaData.To = to
+		data.MetaData.MostRecentData = data.History[1]
 		return data
 	end
 end
@@ -187,11 +228,11 @@ function alpha.currencyExchangeDaily(from,to,outputsize)
 end
 -- api.FX_WEEKLY
 function alpha.currencyExchangeWeekly(from,to,outputsize)
-	return simpleFXParse("FX_WEEKLY",from,to)
+	return simpleFXParse("FX_WEEKLY",from,to,nil,outputsize)
 end
 -- api.FX_MONTHLY
 function alpha.currencyExchangeMonthly(from,to,outputsize)
-	return simpleFXParse("FX_MONTHLY",from,to)
+	return simpleFXParse("FX_MONTHLY",from,to,nil,outputsize)
 end
 local function simpleDigitalParse(command,symbols,market)
 	local data = {}
@@ -199,11 +240,14 @@ local function simpleDigitalParse(command,symbols,market)
 		symbols = {symbols}
 	end
 	for i=1,#symbols do
-		dat = https.request("https://www.alphavantage.co/query?function="..command.."&symbol="..symbols[i].."&market="..market.."&datatype=csv&apikey="..alpha.APIKey)
+		dat = request("https://www.alphavantage.co/query?function="..command.."&symbol="..symbols[i].."&market="..market.."&datatype=csv&apikey="..alpha.APIKey)
 		if dat:find("Invalid API call") then
 			return nil, "Invalid API call"
 		else
 			data[symbols[i]]=alpha.dataToTable(dat)
+			data[symbols[i]].MetaData.Symbol = symbols[i]
+			data[symbols[i]].MetaData.Market = market
+			data[symbols[i]].MetaData.MostRecentData = data[symbols[i]].History[1]
 		end
 	end
 	return data
@@ -238,11 +282,14 @@ local function technicalParsers(cmd,symbol,interval,time_period,series_type,t)
 	for i,v in pairs(t or {}) do
 		extras=extras.."&"..i.."="..v
 	end
-	local data = https.request("https://www.alphavantage.co/query?function="..cmd.."&datatype=csv&symbol="..symbol.."&interval="..interval.."&time_period="..time_period.."&series_type="..series_type.."&apikey="..alpha.APIKey..extras)
+	local data = request("https://www.alphavantage.co/query?function="..cmd.."&datatype=csv&symbol="..symbol.."&interval="..interval.."&time_period="..time_period.."&series_type="..series_type.."&apikey="..alpha.APIKey..extras)
 	if data:find("Invalid API call") then
 		return nil, "Invalid API call"
 	end
-	return alpha.dataToTable(data)
+	data = alpha.dataToTable(data)
+	data.MetaData.Symbol = symbol
+	data.MetaData.MostRecentData = data.History[1]
+	return data
 end
 local function technicalParsers2(cmd,symbol,t)
 	local extras = ""
@@ -250,11 +297,15 @@ local function technicalParsers2(cmd,symbol,t)
 		extras=extras.."&"..i.."="..v
 	end
 	local c = "https://www.alphavantage.co/query?function="..cmd.."&datatype=csv&symbol="..symbol.."&apikey="..alpha.APIKey..extras
-	local data = https.request(c)
+	print(c)
+	local data = request(c)
 	if data:find("Invalid API call") then
 		return nil, "Invalid API call"
 	end
-	return alpha.dataToTable(data)
+	data = alpha.dataToTable(data)
+	data.MetaData.Symbol = symbol
+	data.MetaData.MostRecentData = data.History[1]
+	return data
 end
 -- api.SMA
 function alpha.getSMA(symbol,interval,time_period,series_type)
@@ -311,7 +362,10 @@ function alpha.getSTOCH(symbol,t)
 	return technicalParsers2("STOCH",symbol,t)
 end
 -- api.STOCHF
-function alpha.getSTOCHF(symbol,t)
+function alpha.getSTOCHF(symbol,interval,t)
+	local t = t or {
+		interval = interval or "monthly"
+	}
 	return technicalParsers2("STOCHF",symbol,t)
 end
 -- api.RSI
@@ -635,7 +689,7 @@ function alpha.getHTPhasor(symbol,interval,time_period,series_type,t)
 end
 -- api.SECTOR
 function alpha.getSectorPreformance()
-	local raw = https.request("https://www.alphavantage.co/query?function=SECTOR&apikey="..alpha.APIKey)
+	local raw = request("https://www.alphavantage.co/query?function=SECTOR&apikey="..alpha.APIKey)
 	raw=raw:gsub("  ","")
 	local c = {}
 	for section,data in raw:gmatch([["(.-)": {.(.-).}]]) do
