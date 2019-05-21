@@ -1,18 +1,21 @@
 local bin = require("bin")
 local alpha = {}
 alpha.APIKey = ""
-local _,https = pcall(require,"ssl.https")
-local _,luajitrequest = pcall(require,"luajit-request")
+local loadedssl,https = pcall(require,"ssl.https")
+local loadedreq,luajitrequest = pcall(require,"luajit-request")
 local request
-if https then
+if loadedssl then
 	function request(url)
 		return https.request(url)
 	end
 end
-if luajitrequest and not https then
+if loadedreq and not loadedssl then
 	function request(url)
 		return luajitrequest.send(url).body
 	end
+end
+if request == nil then
+	error("Was unable to load an ssl request library!")
 end
 function string:split(inSplitPattern, outResults)
 	if not outResults then

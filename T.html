@@ -1,0 +1,2249 @@
+
+<!doctype html>
+<html lang="en-us" class="wide quotes-responsive quotes-300-right  no-js" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+<head><script>
+// akam-sw.js install script version 1.1.0
+"serviceWorker"in navigator&&(()=>{let e=new Promise(e=>{"complete"===document.readyState||!1?e():(window.addEventListener("load",()=>{e()}),setTimeout(function(){"complete"!==document.readyState&&e()},1e4))}),o=window.akamServiceWorkerInvoked,a="1.1.0";if(o)aka3pmLog("akam-setup already invoked");else{window.akamServiceWorkerInvoked=!0,window.aka3pmLog=function(){window.akamServiceWorkerDebug&&console.log.apply(console,arguments)};const o=0,t=1;function r(e){(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"sm.sw.s":e,"sm.sw.v":a}])}let i="/akam-sw.js",s="/threepm-sw.js",c=new Map,l=(e,o)=>{c.has(e)||c.set(e,[]),c.get(e).push(o)},m=e=>{let o=c.get(e);return o&&o.length>0?o.shift():null};navigator.serviceWorker.addEventListener("message",e=>{let o=e.data;if(o.isAka3pm)if(o.command){let a=m(o.command);a&&a(e.data.response)}else if(o.commandToClient)switch(o.commandToClient){case"enableDebug":window.akamServiceWorkerDebug||(window.akamServiceWorkerDebug=!0,aka3pmLog("Setup script debug enabled via service worker message"),n());break;case"boomerangMQ":o.payload&&(window.BOOMR_mq=window.BOOMR_mq||[]).push(o.payload)}aka3pmLog("akam-sw message: "+JSON.stringify(e.data))});let d=function(e){return new Promise(o=>{l(e.command,o),navigator.serviceWorker.controller&&(e.isAka3pm=!0,navigator.serviceWorker.controller.postMessage(e))})},g=e=>d({command:"navTiming",navTiming:e});const w="X-Akam-SW-Other";let k=new URL(window.location.href).searchParams.get(w);k&&k.startsWith("akam-sw-old")&&("js"!==k.split(".").pop()&&(k+=".js"),i="/"+k);let p=!0;"boolean"==typeof aka3pmAllowDoubleSW&&(p&=aka3pmAllowDoubleSW);let v=function(e,a){return new Promise((n,i)=>{aka3pmLog("Registering service worker with URL: "+e),navigator.serviceWorker.register(e,a).then(function(e){aka3pmLog("ServiceWorker registration successful with scope: ",e.scope),n(e),r(t)}).catch(function(e){aka3pmLog("ServiceWorker registration failed: ",e),r(o),i(e)})})};if(p){let o=null,a={},r=function(){let e=i;return o&&(e+="?othersw="+encodeURIComponent(o)),v(e,a)},n=ServiceWorkerContainer.prototype.register;if(ServiceWorkerContainer.prototype.register=function(t,s){return t.includes(i)?n.call(this,t,s):(aka3pmLog("Overriding registration of service worker for: "+t),o=new URL(t,window.location.href),a=s,navigator.serviceWorker.controller?new Promise((a,n)=>{let t=navigator.serviceWorker.controller.scriptURL;if(t.includes(i)){let i=encodeURIComponent(o);t.includes(i)?(aka3pmLog("Cancelling registration as we already integrate other SW: "+o),navigator.serviceWorker.getRegistration().then(e=>{a(e)})):e.then(()=>{aka3pmLog("Unregistering existing 3pm service worker"),navigator.serviceWorker.getRegistration().then(e=>{e.unregister().then(()=>r()).then(e=>{a(e)}).catch(e=>{n(e)})})})}else aka3pmLog("Cancelling registration as we already have akam-sw.js installed"),navigator.serviceWorker.getRegistration().then(e=>{a(e)})}):n.call(this,t,s))},navigator.serviceWorker.controller){let n=navigator.serviceWorker.controller.scriptURL;n.includes(i)||n.includes(s)||(aka3pmLog("Detected existing service worker. Removing and re-adding inside akam-sw.js"),o=new URL(n,window.location.href),e.then(()=>{navigator.serviceWorker.getRegistration().then(function(e){a={scope:e.scope},e.unregister(),r()})}))}else e.then(()=>{r()})}else e.then(()=>{navigator.serviceWorker.controller||v(i,{})});if(window.performance){let e=window.performance.timing,o=e.responseEnd-e.responseStart;g(o)}e.then(()=>{d({command:"pageLoad"})});let u=!1;function n(){window.akamServiceWorkerDebug&&!u&&(u=!0,aka3pmLog("Initializing debug functions at window scope"),window.aka3pmInjectSwPolicy=(e=>d({command:"updatePolicy",policy:e})),window.aka3pmDisableInjectedPolicy=(()=>d({command:"disableInjectedPolicy"})),window.aka3pmDeleteInjectedPolicy=(()=>d({command:"deleteInjectedPolicy"})),window.aka3pmGetStateAsync=(()=>d({command:"getState"})),window.aka3pmDumpState=(()=>{aka3pmGetStateAsync().then(e=>{aka3pmLog(JSON.stringify(e,null,"\t"))})}),window.aka3pmInjectTiming=(e=>g(e)),window.aka3pmUpdatePolicyFromNetwork=(()=>d({command:"pullPolicyFromNetwork"})))}n()}})();    </script>
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K2BQVP7');</script>
+<!-- End Google Tag Manager -->
+<script>
+(function(){
+    var is_chrome;
+    if(typeof navigator.vendor!="undefined")
+	    is_chrome = ((navigator.userAgent.toLowerCase().indexOf('chrome') > -1) && (navigator.vendor.toLowerCase().indexOf("google") > -1));
+    else
+	    is_chrome = false;
+})();
+</script>
+<!-- includes\2-column-quotes-300-right.master -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+<meta name="viewport" content="width=device-width" />
+
+
+<!-- START  page level head content -->
+<title>AT&amp;amp;T Inc. (T) Dividend Date &amp;amp; History - Nasdaq</title>
+<!-- aspx\dividend-history.aspx -->
+<meta name="description" content="See&#32;the&#32;upcoming&#32;ex&#32;dividend&#32;date&#32;and&#32;dividend&#32;history&#32;for&#32;AT&amp;amp;T&#32;Inc.&#32;(T).&#32;Stay&#32;alerted&#32;to&#32;dividend&#32;announcements&#32;for&#32;T&#32;and&#32;all&#32;the&#32;companies&#32;you&#32;follow&#32;at&#32;NASDAQ.com" />
+<meta name="robots" content="index,follow" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="canonical" href="https://www.nasdaq.com/symbol/t/dividend-history" />
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.nasdaq.com/symbol/t/dividend-history" />
+<link rel="alternate" href="https://www.nasdaq.com/es/symbol/t/dividend-history" hreflang="es-es" />
+<link rel="alternate" href="https://www.nasdaq.com/it/symbol/t/dividend-history" hreflang="it-it" />
+<link rel="alternate" href="https://www.nasdaq.com/de/symbol/t/dividend-history" hreflang="de-de" />
+<link rel="alternate" href="https://www.nasdaq.com/zh/symbol/t/dividend-history" hreflang="zh-cn" />
+<link rel="alternate" href="https://www.nasdaq.com/fr/symbol/t/dividend-history" hreflang="fr-fr" />
+<link rel="alternate" href="https://www.nasdaq.com/symbol/t/dividend-history" hreflang="x-default" />
+<!-- opengraph support-->
+<meta property="og:title" content="Dividend History" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="NASDAQ.com" />
+<meta property="og:url" content="" />
+<meta property="og:image" content="https://www.nasdaq.com/images/Q-logo.jpg" />
+
+<script type="text/javascript">
+    var myPage = 'dividend_history';
+    var sectionId = 'liQuotes'; //section tab
+    var breadCrumbId = 'qQuotes'; //page
+    is_dartSite = "quotes";
+    is_dartZone = "dividendhistory";
+    var propVar = "Dividend History";
+    var propVar15 = "Quotes";
+    var googlechannel = '';
+    var googlehints = '';
+    var real_url = 'https\x3a\x2f\x2fwww.nasdaq.com\x2faspx\x2fdividend-history.aspx\x3fsymbol\x3dT\x26selected\x3dT';
+	var canonical_url = 'https://www.nasdaq.com/symbol/t/dividend-history';
+
+var useSRA = true;
+var premakeAds = [];
+
+premakeAds.push({ 'label': 'ad', 'size': '120x60', 'site': 'box_button', 'zone': is_dartZone });
+premakeAds.push({ 'label': 'ad', 'size': '120x60', 'site': 'leftnav_top', 'zone': is_dartZone });
+premakeAds.push({ 'label': 'ad', 'size': '980x20,300x25', 'site': is_dartSite, 'zone': is_dartZone });
+premakeAds.push({ 'label': 'ad', 'size': '88x31', 'site': is_dartSite, 'zone': is_dartZone });//additional 88x31
+premakeAds.push({ 'label': 'ad', 'size': '300x250,300x600', 'site': is_dartSite, 'zone': is_dartZone });
+premakeAds.push({ 'label': 'ad', 'size': '300x250,300x600', 'site': 'mop', 'zone': is_dartZone });
+    //premakeAds.push({ 'label': 'ad', 'size': '300x250,300x600,160x600', 'site': 'btf', 'zone': is_dartZone });
+    premakeAds.push({ 'label': 'ad', 'size': '1x1', 'site': 'btf', 'zone': is_dartZone });
+premakeAds.push({ 'label': 'ad', 'size': '1x1', 'site': 'quotes', 'zone': 'gutter_left' });
+</script>
+
+<!--
+  ~ Copyright (C) 2014-2015 Media.net Advertising FZ-LLC All Rights Reserved
+  -->
+<script type="text/javascript">
+    window._mNHandle = window._mNHandle || {};
+    window._mNHandle.queue = window._mNHandle.queue || [];
+    medianet_versionId = "3121199";
+            </script>
+<script src="//contextual.media.net/dmedianet.js?cid=8CU1CBY9H" async="async"></script>
+<!-- END page level head content -->
+
+
+<!--********************************* BEGIN includes/global-references.inc **************************-->
+<!-- global stylesheets -->
+<link rel="stylesheet" type="text/css" href="https://www.nasdaq.com/includes/global.min-04172019v1.css"/>
+<!--[if lt IE 9]>
+<script src="https://www.nasdaq.com/includes/html5shiv-printshiv.js"></script>
+<link rel="stylesheet" type="text/css" href="https://www.nasdaq.com/includes/global-ie8.min-11212015v1.css"/>
+<![endif]-->
+
+<!-- favicon and shortcut icons -->
+<link rel="apple-touch-icon" href="https://www.nasdaq.com/images/Q_apple.png"/>
+<link rel="shortcut icon" href="https://www.nasdaq.com/images/qfav.ico" type="image/ico"/>
+<link rel="icon" href="https://www.nasdaq.com/images/qfav.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="https://www.nasdaq.com/images/qfav.ico" type="image/x-icon"/>
+
+  <!-- scripts -->
+
+  <!-- Casale -->
+  <script src="https://js-sec.indexww.com/ht/headertag-nasdaq.js" async></script>
+
+    <!-- GPT -->
+    <script async="true" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+
+    <script src="https://www.nasdaq.com/dynamic_includes/marketstatus.js"></script>
+    <script src="https://www.nasdaq.com/aspx/marketstatus.aspx"></script>
+
+    <script src="https://www.nasdaq.com/includes/jquery.min.js"></script>
+    <script src="https://www.nasdaq.com/includes/global.min-05072019v1.js"></script>
+    <script src="https://www.nasdaq.com/includes/cookie_policy.js?05232018v1"></script>
+    
+    <!-- the dynamic css container -->
+    <style type="text/css" title="dynamic"></style>
+    <script type="text/javascript">
+      //<![CDATA[
+updateSiteTheme();
+//]]>
+      var btfRefresh = [];
+
+      function adBtfRefresh(premakeAds) {
+        if ((premakeAds.label == "ad") && (premakeAds.site == "btf")) {
+          btfRefresh.push(premakeads);
+        }
+      }
+
+      googletag.cmd.push(function () {
+      autoAdRefresh(btfRefresh, 60000);
+      });
+
+      googletag.cmd.push(function () {
+      autoAdRefresh([0,1,2,3], 45000);
+      });
+    </script>
+   <!-- <script type='text/javascript' src='//rndntpmgnj-a.akamaihd.net/NA2L50A6M.js' async=''></script>-->
+
+    <!--  Quantcast Tag -->
+    <script>
+
+      var ezt = ezt ||[];
+
+      (function(){
+      var elem = document.createElement('script');
+      elem.src = (document.location.protocol == "https:" ? "https://secure" : "https://pixel") + ".quantserve.com/aquant.js?a=p-kGNZ2CXTUFYyw";
+      elem.async = true;
+      elem.type = "text/javascript";
+      var scpt = document.getElementsByTagName('script')[0];
+      scpt.parentNode.insertBefore(elem,scpt);
+      }());
+
+
+      (function(){
+      var label;
+      if(typeof propVar3=='undefined')
+      propVar3 = "";
+      if(typeof propVar15=='undefined')
+      propVar15 = "";
+      if(typeof propVar=='undefined')
+      propVar = "";
+      label = 'Author.'+propVar3+',Category.'+propVar15+'.'+propVar;
+      ezt.push({qacct: 'p-kGNZ2CXTUFYyw',
+      uid: '',
+      labels:label
+      });
+      }());
+
+    </script>
+    <noscript>
+      <img src="//pixel.quantserve.com/pixel/p-kGNZ2CXTUFYyw.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+    </noscript>
+    <!-- End Quantcast Tag -->
+
+<!--********************************* END includes/global-references.inc **************************-->
+
+<!-- Begin includes/head-quotes-content.inc -->
+<link rel="stylesheet" type="text/css" href="https://www.nasdaq.com/includes/quotenav-with-quotebar.min-11152018v1.css" />
+<script type="text/javascript" src="https://www.nasdaq.com/includes/global-quotes.min-03292017v1.js"></script>
+<!-- End includes/head-quotes-content.inc -->
+
+<script type="text/javascript">
+    var server_time = new Date(1557766952290);
+</script>
+
+
+<!-- START page level style/script -->
+<script type="text/javascript">
+var mobileModule = createMobileModule("mobileDividendaccess", "https://m.nasdaq.com/symbol/t/dividend-history");
+    mobileModule.checkFullSiteAccess();
+var intlModule = createLocalityModule("intlAccess", window.location.href.replace("nasdaq.com", "nasdaq.com/{0}"), 30, 733);
+    intlModule.checkUSSiteAccess();
+    function makeLeaderboardAd() {
+        makeAd('1', '980x60,728x90', is_dartSite, is_dartZone, '', '');
+    }
+    var deferredAdTimeout = 3000;
+</script>
+<style type="text/css">
+/* Begin 980x60 Takeover Banner */
+#global_banner {
+    min-height: 60px
+}
+/* End 980x60 Takeover Banner */
+#additional-88x31 {
+    width: 88px;
+    height: 31px;
+    position: absolute;
+    top: 2px;
+    right: 0;
+}
+</style>
+<!-- END page level style/script -->
+
+
+<style type="text/css">
+#container.wrap {background-color:#ffffff}
+#panel_left {float:left}
+</style>
+
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false"}]);</script>
+<script>!function(){function o(n,i){if(n&&i)for(var r in i)i.hasOwnProperty(r)&&(void 0===n[r]?n[r]=i[r]:n[r].constructor===Object&&i[r].constructor===Object?o(n[r],i[r]):n[r]=i[r])}try{var n=decodeURIComponent("");if(n.length>0&&window.JSON&&"function"==typeof window.JSON.parse){var i=JSON.parse(n);void 0!==window.BOOMR_config?o(window.BOOMR_config,i):window.BOOMR_config=i}}catch(r){window.console&&"function"==typeof window.console.error&&console.error("mPulse: Could not parse configuration",r)}}();</script>
+<script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,o,r,O=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);O.src="javascript:void(0)",O.title="",O.role="presentation",(O.frameElement||O).style.cssText="width:0;height:0;border:0;display:none;",r=document.getElementsByTagName("script")[0],r.parentNode.insertBefore(O,r);try{o=O.contentWindow.document}catch(_){i=document.domain,O.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",o=O.contentWindow.document}o.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"X7FLY-5XYMD-3HLZC-GZTNC-MNH9C",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},o.write("<bo"+'dy onload="document._l();">'),o.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e="false"=="true"?1:0,t="",n="i5us5mqx3moy4xgzumua-f-5fe1c3218-clientnsv4-s.akamaihd.net",i={"ak.v":20,"ak.cp":"160697","ak.ai":parseInt("237522",10),"ak.ol":"0","ak.cr":23,"ak.ipv":4,"ak.proto":"h2","ak.rid":"541afd","ak.r":28410,"ak.a2":e,"ak.m":"a","ak.n":"essl","ak.bpcip":"71.105.46.0","ak.cport":58874,"ak.gh":"23.219.93.62","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1557766952"};if(""!==t)i["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))i["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script>
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"160697",ustr:"",originlat:"0",clientrtt:"23",ghostip:"23.219.93.62",ipv6:false,pct:"10",clientip:"71.105.46.178",requestid:"541afd",region:"28410",protocol:"h2",blver:14,akM:"a",akN:"ae",akTT:"O",akTX:"1",akTI:"541afd",ai:"237522",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    <script>bazadebezolkohpepadr="531255716"</script><script type="text/javascript" src="https://www.nasdaq.com/akam/10/1faa532b" defer></script></head>
+
+<body id="body">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2BQVP7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!--[if IE 8]> <script src="https://www.nasdaq.com/includes/respond.js"></script> <![endif]-->
+<!--[if IE 7]> <script src="https://www.nasdaq.com/includes/zindex.js"></script> <![endif]-->
+
+
+<!--*************************************** BEGIN includes/global-masthead.inc ****************************************-->
+<!-- comscore tag -->
+
+<!-- Begin comScore Tag -->
+<script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "25698457" });
+  (function() {
+  var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+  s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+  el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+  <img src="https://sb.scorecardresearch.com/p?c1=2&c2=25698457&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+
+<!-- end comscore tag -->
+<header id="global_header" data-role="header">
+  <!--// Begin Hot Topics -->
+  <div id="hot_topics">
+    <div><b>Hot Topics:</b></div>
+    <a href="https://www.nasdaq.com/etfs" onclick="triggerAsyncOmnitureClickEvent('nav:hot-topics:ETFs')">ETFs</a>
+    <span>&nbsp;|&nbsp;</span>
+    <a href="https://stocktracker.nasdaq.com/smart-portfolio/welcome" onclick="triggerAsyncOmnitureClickEvent('nav:hot-topics:SmartPT')">Smart Portfolio</a>
+    <span>&nbsp;|&nbsp;</span>
+    <a href="https://www.nasdaq.com/forex/" onclick="triggerAsyncOmnitureClickEvent('nav:hot-topics:Currencies')">Currencies</a>
+    <span>&nbsp;|&nbsp;</span>
+    <a href="https://www.nasdaq.com/investing/online-brokers/" onclick="triggerAsyncOmnitureClickEvent('nav:hot-topics:Broker')">Online Broker Center</a>
+  </div>
+  <!--// End Hot Topics -->
+  <nav id="global_nav">
+    <div id="header_wrap">
+      <div class="logo">
+        <a href="https://www.nasdaq.com/" target="_self" onclick="triggerAsyncOmnitureClickEvent('nav:links:homepage')">
+          <span></span>
+        </a>
+      </div>
+      <div id="nasdaq_login">
+        <div id="nWelcome">
+          &nbsp;
+        </div>
+        <div id="mainNav-88x31">
+          <script type="text/javascript" language="javascript">makeAd('','88x31','masthead',is_dartZone,'','');</script>
+        </div>
+        <!--// Begin notifier placeholder -->
+        <div id="global_notifier" class="floatR">
+          <div class='ideaMelt' melt-notifier=''></div>
+        </div>
+        <!--// End notifier placeholder -->
+      </div>
+    </div>
+    <div class="clearB"></div>
+    <ul class="js-nav-toggle primary" id="js-nav-toggle">
+      <li id="site-nav-company">
+        <a href="https://business.nasdaq.com" data-click-event="nav:company:company-hub" onclick="triggerAsyncOmnitureClickEvent('nav:company:company-hub')">
+          <span>Our Businesses</span>
+        </a>
+        <div class="global_dropdown">
+          <div>
+            <div class="floatL half">
+              <ul>
+                <li>
+                  <a href="https://business.nasdaq.com/tech" onclick="triggerAsyncOmnitureClickEvent('nav:company:tech')"><b>Tech</b></a>
+                  <a href="https://business.nasdaq.com/tech" onclick="triggerAsyncOmnitureClickEvent('nav:company:tech')">Differentiate With <br />Technology</a>
+                </li>
+                <li>
+                  <a href="https://business.nasdaq.com/trade" onclick="triggerAsyncOmnitureClickEvent('nav:company:trade')"><b>Trade</b></a>
+                  <a href="https://business.nasdaq.com/trade" onclick="triggerAsyncOmnitureClickEvent('nav:company:trade')">Trade Multiple <br />Asset Classes</a>
+                </li>
+                <li>
+                  <a href="https://business.nasdaq.com/track" onclick="triggerAsyncOmnitureClickEvent('nav:company:track')"><b>Track</b></a>
+                  <a href="https://business.nasdaq.com/track" onclick="triggerAsyncOmnitureClickEvent('nav:company:track')">Track the Markets</a>
+                </li>
+              </ul>
+            </div>
+            <div class="displayIB half">
+              <ul>
+                <li>
+                  <a href="https://business.nasdaq.com/intel" onclick="triggerAsyncOmnitureClickEvent('nav:company:intel')"><b>Intel</b></a>
+                  <a href="https://business.nasdaq.com/intel" onclick="triggerAsyncOmnitureClickEvent('nav:company:intel')">Leverage Actionable <br />Intelligence</a>
+                </li>
+                <li>
+                  <a href="https://business.nasdaq.com/list" onclick="triggerAsyncOmnitureClickEvent('nav:company:list')"><b>List</b></a>
+                  <a href="https://business.nasdaq.com/list" onclick="triggerAsyncOmnitureClickEvent('nav:company:list')">Access Capital</a>
+                  <a href="https://listingcenter.nasdaq.com/" onclick="triggerAsyncOmnitureClickEvent('nav:company:list')">Listing Center</a>
+                </li>
+                <li>
+                  <a href="https://business.nasdaq.com/discover" onclick="triggerAsyncOmnitureClickEvent('nav:company:discover')"><b>Discover</b></a>
+                  <a href="https://business.nasdaq.com/discover" onclick="triggerAsyncOmnitureClickEvent('nav:company:discover')">Discover Nasdaq</a>
+                  <a href="https://business.nasdaq.com/marketinsite" onclick="triggerAsyncOmnitureClickEvent('nav:company:discover')">Nasdaq Blog</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--// Begin includes/main-nav-company-featured.inc -->
+<div class="table-table featured">
+  <div class="table-row">
+    <div class="table-cell">
+      <a href="https://nasdaq.com/rewritetomorrow" onclick="triggerAsyncOmnitureClickEvent('nav:company:rewritetomorrow')">
+        <img src="https://www.nasdaq.com/images/rewritetomorrow80x80-10082018v4.jpg" width="80" height="80" alt="Rewrite Tomorrow featured image" />
+      </a>
+    </div>
+    <div class="table-cell">
+      <a href="https://nasdaq.com/rewritetomorrow" onclick="triggerAsyncOmnitureClickEvent('nav:company:rewritetomorrow')">
+        <b>Rewrite Tomorrow</b>
+      </a>
+      <div class="clearB"></div>
+      <span>Tomorrow is a market of endless possibilities, learn more</span>
+    </div>
+  </div>
+</div>
+<!--// End includes/main-nav-company-featured.inc -->
+        </div>
+      </li>
+      <li id="site-nav-quotes">
+        <a href="https://www.nasdaq.com/quotes" data-click-event="nav:quotes:quotes-hub" onclick="triggerAsyncOmnitureClickEvent('nav:quotes:quotes-hub')">
+          <span>Quotes</span>
+        </a>
+        <div class="global_dropdown">
+          <div>
+            <div class="floatL half">
+              <ul>
+                <li>
+                  <a href="https://www.nasdaq.com/quotes/" onclick="triggerAsyncOmnitureClickEvent('nav:quotes:quotes-hub')">
+                    <b>Quotes &amp; Research</b>
+                  </a>
+                  <a href="https://www.nasdaq.com/aspx/flashquotes.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:quotes:flash-quotes')">Flash Quotes</a>
+                  <a href="https://www.nasdaq.com/aspx/infoquotes.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:quotes:info-quotes')">InfoQuotes</a>
+                  <a href="https://www.nasdaq.com/quotes/stock-quotes.aspx" onclick="handleNQClick(this,'nav:quotes:summary-quotes')">Summary Quotes</a>
+                  <a href="https://www.nasdaq.com/quotes/real-time.aspx" onclick="handleNQClick(this,'nav:quotes:real-time')">Real-time Quotes</a>
+                  <a href="https://www.nasdaq.com/extended-trading/" onclick="handleNQClick(this,'nav:quotes:extended-trading')">Extended Trading</a>
+                  <a href="https://www.nasdaq.com/options/" onclick="handleNQClick(this,'nav:quotes:options')">Options Trading Center</a>
+                  <a href="https://www.nasdaq.com/quotes/historical-quotes.aspx" onclick="handleNQClick(this,'nav:quotes:historical-quotes')">Historical Quotes</a>
+                </li>
+                <li>
+                  <span class="fontS14px"><b>Charts</b></span>
+                  <a href="https://www.nasdaq.com/quotes/stock-charts.aspx" onclick="handleNQClick(this,'nav:quotes:basic-charts')">Basic Charts</a>
+                  <a href="https://www.nasdaq.com/quotes/interactive-charts.aspx" onclick="handleNQClick(this,'nav:quotes:interactive-charts')">Interactive Charts</a>
+                </li>
+                <li>
+                  <span class="fontS14px"><b>Companies</b></span>
+                  <a href="https://www.nasdaq.com/quotes/company-news.aspx" onclick="handleNQClick(this,'nav:quotes:news')">Company News</a>
+                  <a href="https://www.nasdaq.com/quotes/press-releases.aspx" onclick="handleNQClick(this,'nav:quotes:press-releases')">Press Releases</a>
+                  <a href="https://www.nasdaq.com/screening/company-list.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:quotes:company-list')">Company List</a>
+                  <a href="https://www.nasdaq.com/screening/companies-by-industry.aspx?exchange=NASDAQ" onclick="handleNQClick(this,'nav:quotes:nasdaq')">Nasdaq Companies</a>
+                </li>
+              </ul>
+            </div>
+            <div class="floatR half">
+              <ul>
+                <li>
+                  <span class="fontS14px"><b>Stock Analysis</b></span>
+                  <a href="https://www.nasdaq.com/quotes/analyst-research.aspx" onclick="handleNQClick(this,'nav:quotes:analyst-research')">Analyst Research</a>
+                  <a href="https://www.nasdaq.com/quotes/stock-guru-analysis.aspx" onclick="handleNQClick(this,'nav:quotes:guru-analysis')">Guru Analysis</a>
+                  <a href="https://www.nasdaq.com/quotes/stock-reports.aspx" onclick="handleNQClick(this,'nav:quotes:stock-reports')">Stock Reports</a>
+                  <a href="https://www.nasdaq.com/quotes/business-competitors.aspx" onclick="handleNQClick(this,'nav:quotes:competitors')">Competitors</a>
+                </li>
+                <li>
+                  <span class="fontS14px"><b>Fundamentals</b></span>
+                  <a href="https://www.nasdaq.com/quotes/company-financials.aspx" onclick="handleNQClick(this,'nav:quotes:financials')">Financials</a>
+                  <a href="https://www.nasdaq.com/quotes/revenue-eps.aspx" onclick="handleNQClick(this,'nav:quotes:revenue-eps')">Revenue/EPS</a>
+                  <a href="https://www.nasdaq.com/quotes/sec-filings.aspx" onclick="handleNQClick(this,'nav:quotes:sec-filings')">SEC Filings</a>
+                  <a href="https://www.nasdaq.com/quotes/short-interest.aspx" onclick="handleNQClick(this,'nav:quotes:short-interest')">Short Interest</a>
+                  <a href="https://www.nasdaq.com/quotes/dividend-history.aspx" onclick="handleNQClick(this,'nav:quotes:dividend-history')">Dividend History</a>
+                </li>
+                <li>
+                  <span class="fontS14px"><b>Holdings</b></span>
+                  <a href="https://www.nasdaq.com/quotes/ownership.aspx" onclick="handleNQClick(this,'nav:quotes:ownership')">Ownership Summary</a>
+                  <a href="https://www.nasdaq.com/quotes/institutional-holdings.aspx" onclick="handleNQClick(this,'nav:quotes:institutional-holdings')">Institutional Holdings</a>
+                  <a href="https://www.nasdaq.com/quotes/insider-trades.aspx" onclick="handleNQClick(this,'nav:quotes:insider-trades')">Insiders Form 4</a>
+                </li>
+              </ul>
+            </div>
+            <div class="clearB"></div>
+          </div>
+        </div>
+      </li>
+      <li id="site-nav-markets">
+        <a href="https://www.nasdaq.com/markets/" data-click-event="nav:markets:markets-hub" onclick="triggerAsyncOmnitureClickEvent('nav:markets:markets-hub')">
+          <span>Markets</span>
+        </a>
+        <div class="global_dropdown">
+          <div>
+            <div class="floatL half">
+              <ul>
+                <li>
+                  <a href="https://www.nasdaq.com/extended-trading/" onclick="triggerAsyncOmnitureClickEvent('nav:markets:extended')">
+                    <b>Extended Hours</b>
+                  </a>
+                  <a href="https://www.nasdaq.com/extended-trading/premarket-mostactive.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:pre-market')">Pre-Market Activity</a>
+                  <a href="https://www.nasdaq.com/extended-trading/afterhours-mostactive.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:after-hours')">After Hours Activity</a>
+                </li>
+                <li>
+                  <span class="fontS14px"><b>Stocks</b></span>
+                  <a href="https://www.nasdaq.com/aspx/mostactive.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:most-active')">Most Active</a>
+                  <a href="https://www.nasdaq.com/markets/unusual-volume.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:unusual-volume')">Unusual Volume</a>
+                  <a href="https://www.nasdaq.com/aspx/52-week-high-low.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:52-week-high-low')">52 Week High/Low</a>
+                  <a href="https://www.nasdaq.com/markets/upcoming-splits.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:upcoming-splits')">Upcoming Splits</a>
+                  <a href="https://www.nasdaq.com/markets/sec-filings-n.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:sec-filings')">New SEC Filings</a>
+                  <a href="https://www.nasdaq.com/markets/ipos" onclick="triggerAsyncOmnitureClickEvent('nav:markets:ipo-summary')">IPO Summary</a>
+                  <a href="https://www.nasdaq.com/earnings/earnings-calendar.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:earnings-calendar')">Earnings Calendar</a>
+                  <a href="https://www.nasdaq.com/dividend-stocks/" onclick="triggerAsyncOmnitureClickEvent('nav:markets:dividend-stocks')">Dividend Stocks</a>
+                  <a href="https://www.nasdaq.com/markets/barchart-sectors.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:sector-analysis')">Sector Analysis</a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/forex/" onclick="triggerAsyncOmnitureClickEvent('nav:markets:forex')"><b>Forex</b></a>
+                </li>
+              </ul>
+            </div>
+            <div class="floatR half">
+              <ul>
+                <li>
+                  <a href="https://www.nasdaq.com/markets/commodities.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:commodities')"><b>Commodities</b></a>
+                  <a href="https://www.nasdaq.com/markets/gold.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:gold')">Gold</a>
+                  <a href="https://www.nasdaq.com/markets/crude-oil.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:crude-oil')">Oil</a>
+                </li>
+                <li>
+                  <span class="fontS14px"><b>Analyst Activity</b></span>
+                  <a href="https://www.nasdaq.com/earnings/daily-analyst-recommendations.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:upgrades-downgrades')">Upgrades/Downgrades</a>
+                  <a href="https://www.nasdaq.com/earnings/analyst-forecast-change.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:analyst-forecast-change')">Forecast Changes</a>
+                  <a href="https://www.nasdaq.com/earnings/daily-earnings-surprise.aspx" class="a-mega" onclick="triggerAsyncOmnitureClickEvent('nav:markets:daily-earnings-surprise')">Earning Surprises</a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/markets/indices/" onclick="triggerAsyncOmnitureClickEvent('nav:markets:indices')"><b>Indices</b></a>
+                  <a href="https://www.nasdaq.com/markets/indices/major-indices.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:market-indices')">Major Stock Indices</a>
+                  <a href="https://www.nasdaq.com/markets/indices/sector-indices.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:sector-indices')">Market Sector Indices</a>
+                  <a href="https://www.nasdaq.com/markets/index-highs" onclick="triggerAsyncOmnitureClickEvent('nav:markets:statistical-milestones')">Statistical Milestones</a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/markets/global-markets.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:markets:global-markets')"><b>Global Markets</b></a>
+                </li>
+              </ul>
+            </div>
+            <div class="clearB"></div>
+          </div>
+        </div>
+      </li>
+      <li id="site-nav-news">
+        <a href="https://www.nasdaq.com/news/" data-click-event="nav:news:news-hub" onclick="triggerAsyncOmnitureClickEvent('nav:news:news-hub')">
+          <span>News</span>
+        </a>
+        <div class="global_dropdown">
+          <div>
+            <div class="floatL half">
+              <ul>
+                <li>
+                  <a href="https://www.nasdaq.com/quotes/company-news.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:news:company-news')"><b>Company News</b></a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/news/market-headlines.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:news:market-headlines')"><b>Market Headlines</b></a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/topic/marketinsite" onclick="triggerAsyncOmnitureClickEvent('nav:news:marketinsite')"><b>MarketInsite</b></a>
+                </li>
+              </ul>
+            </div>
+            <div class="floatR half">
+              <ul>
+                <li>
+                  <a href="https://www.nasdaq.com/markets/us-economic-calendar.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:news:economic-calendar')"><b>Economic Calendar</b></a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/tech/" onclick="triggerAsyncOmnitureClickEvent('nav:news:technology')"><b>Technology News</b></a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/tomorrowscapital/" onclick="triggerAsyncOmnitureClickEvent('nav:news:tomorrowscapital')"><b>Tomorrow's Capital Podcast</b></a>
+                </li>
+              </ul>
+            </div>
+            <div class="clearB"></div>
+          </div>
+          <!-- Begin includes/main-navigation-featured-video.inc -->
+<div class="table-table featured">
+  <div class="table-row">
+    <div class="table-cell">
+      <a href="https://www.nasdaq.com/article/nvidia-earnings-what-to-watch-on-thursday-cm1147846" onclick="triggerAsyncOmnitureClickEvent('nav:news:featured-article')">
+        <img src="https://www.nasdaq.com/images/news/0513news-am2.jpg" width="80" height="80" />
+      </a>
+    </div>
+    <div class="table-cell">
+      <a href="https://www.nasdaq.com/article/nvidia-earnings-what-to-watch-on-thursday-cm1147846" onclick="triggerAsyncOmnitureClickEvent('nav:news:featured-article')">
+      NVIDIA Earnings: What to Watch on Thursday
+      </a>
+      <div class="clearB"></div>
+    </div>
+  </div>
+</div>
+<!-- End includes/main-navigation-featured-video.inc -->
+        </div>
+      </li>
+      <li id="site-nav-investing">
+        <a href="https://www.nasdaq.com/investing/" data-click-event="nav:investing:investing-hub" onclick="triggerAsyncOmnitureClickEvent('nav:investing:investing-hub')">
+          <span>Investing</span>
+        </a>
+        <div class="global_dropdown">
+          <div>
+            <div class="floatL half">
+              <ul>
+                <li>
+                  <a href="https://www.nasdaq.com/investing/stocks.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:investing:stocks')">
+                    <b>Stocks</b>
+                  </a>
+                  <a href="https://www.nasdaq.com/investing/how-to-invest.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:investing:investing-basics')">Investing Basics</a>
+                  <a href="https://www.nasdaq.com/investing/online-brokers/" onclick="triggerAsyncOmnitureClickEvent('nav:investing:online-brokers')">Broker Comparison</a>
+                  <a href="https://www.nasdaq.com/investing/glossary/" onclick="triggerAsyncOmnitureClickEvent('nav:investing:glossary')">Glossary</a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/investing/mutual-funds.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:investing:mutual-funds')"><b>Mutual Funds</b></a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/etfs" onclick="triggerAsyncOmnitureClickEvent('nav:investing:etfs')"><b>ETFs</b></a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/options/" onclick="triggerAsyncOmnitureClickEvent('nav:investing:options')"><b>Options</b></a>
+                </li>
+              </ul>
+            </div>
+            <div class="floatR half">
+              <ul>
+                <li>
+                  <a href="https://www.nasdaq.com/investing/tools.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:investing:tools')"><b>Investing Tools</b></a>
+                  <a href="https://www.nasdaq.com/reference/stock-screener.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:investing:stock-screener')">Stock Screener</a>
+                  <a href="https://www.nasdaq.com/investing/guru/guru-stock-screener.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:investing:guru-screener')">Guru Screener</a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/advisor/" onclick="triggerAsyncOmnitureClickEvent('nav:investing:advisor')"><b>Financial Advisor <br />Center</b></a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/investing/bonds.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:investing:bonds')"><b>Bonds</b></a>
+                </li>
+              </ul>
+            </div>
+            <div class="clearB"></div>
+          </div>
+          <!--// Begin includes/main-nav-investing-feature.inc -->
+
+<div class="table-table featured">
+  <div class="table-row">
+    <div class="table-cell">
+      <a href="https://www.nasdaq.com/article/how-data-is-making-the-us-stock-market-open-for-all-investors-cm998274" onclick="triggerAsyncOmnitureClickEvent('nav:investing:the-anatomy-of-the-trade')">
+        <img src="https://www.nasdaq.com/images/anatomy-of-a-trade80x80.jpg" width="80" height="80" border="0" />
+      </a>
+    </div>
+    <div class="table-cell">
+      <a href="https://www.nasdaq.com/article/how-data-is-making-the-us-stock-market-open-for-all-investors-cm998274" onclick="triggerAsyncOmnitureClickEvent('nav:investing:the-anatomy-of-the-trade')">
+          <b>The Anatomy of a Trade</b>
+      </a>
+      <div class="clearB"></div>
+      <span>How data is making the U.S. stock market more open for all</span>
+    </div>
+  </div>
+</div>
+
+<!--// End includes/main-nav-investing-feature.inc -->
+        </div>
+      </li>
+      <li id="site-nav-pf">
+        <a href="https://www.nasdaq.com/personal-finance/" data-click-event="nav:personal-finance:pf-hub" onclick="triggerAsyncOmnitureClickEvent('nav:personal-finance:pf-hub')">
+          <span>Personal Finance</span>
+        </a>
+        <div class="global_dropdown">
+          <div>
+            <div class="floatL half">
+              <ul>
+                <li>
+                  <a href="https://www.nasdaq.com/personal-finance/retirement.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:personal-finance:retirement')">
+                    <b>Retirement</b>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/personal-finance/real-estate.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:personal-finance:real-estate')">
+                    <b>Real Estate</b>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/personal-finance/banking.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:personal-finance:banking')">
+                    <b>Banking</b>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/personal-finance/insurance.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:personal-finance:insurance')">
+                    <b>Insurance</b>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="floatR half">
+              <ul>
+                <li>
+                  <a href="https://www.nasdaq.com/personal-finance/saving-money/" onclick="triggerAsyncOmnitureClickEvent('nav:personal-finance:saving-money')">
+                    <b>Saving Money</b>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/personal-finance/taxes.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:personal-finance:taxes')">
+                    <b>Taxes</b>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/personal-finance/investments.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:personal-finance:investments')">
+                    <b>Investments</b>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.nasdaq.com/personal-finance/small-business.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:personal-finance:small-business')">
+                    <b>Small Business</b>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="clearB"></div>
+          </div>
+          <!--// Begin includes/main-navigation-featured-article.inc -->
+<div class="table-table featured">
+  <div class="table-row">
+    <div class="table-cell">
+      <a href="https://www.nasdaq.com/article/8-ways-to-keep-your-travel-credit-card-working-for-you-cm1147533" onclick="triggerAsyncOmnitureClickEvent('nav:personal-finance:featured-article')">
+        <img src="https://www.nasdaq.com/images/news/0513news-am5.jpg" width="80" height="80" border="0" />
+      </a>
+    </div>
+    <div class="table-cell">
+      <a href="https://www.nasdaq.com/article/8-ways-to-keep-your-travel-credit-card-working-for-you-cm1147533" onclick="triggerAsyncOmnitureClickEvent('nav:personal-finance:featured-article')">
+      8 Ways to Keep Your Travel Credit Card Working For You
+      </a>
+      <div class="clearB"></div>
+    </div>
+  </div>
+</div>
+<!--// End includes/main-navigation-featured-article.inc -->
+        </div>
+      </li>
+      <li id="site-nav-nasdaq">
+        <a href="https://stocktracker.nasdaq.com/smart-portfolio" data-click-event="nav:my-nasdaq:my-nasdaq-hub" onclick="triggerAsyncOmnitureClickEvent('nav:my-nasdaq:my-nasdaq-hub')">
+          <span>Portfolio</span>
+        </a>
+        <div class="global_dropdown">
+          <div>
+            <div class="floatL half">
+              <ul>
+                <li>
+                  <span class="fontS14px"><b>Smart Portfolio</b></span>
+                  <a href="https://stocktracker.nasdaq.com/smart-portfolio/welcome" onclick="triggerAsyncOmnitureClickEvent('nav:my-nasdaq:overview')">Overview</a>
+                  <a href="https://stocktracker.nasdaq.com/smart-portfolio/holdings/holdings" onclick="triggerAsyncOmnitureClickEvent('nav:my-nasdaq:holdings')">My Holdings</a>
+                  <a href="https://stocktracker.nasdaq.com/smart-portfolio/analysis/overview" onclick="triggerAsyncOmnitureClickEvent('nav:my-nasdaq:portfolio-analysis')">My Portfolio Analysis</a>
+                  <a href="https://stocktracker.nasdaq.com/smart-portfolio/insights" onclick="triggerAsyncOmnitureClickEvent('nav:my-nasdaq:insights')">Crowd Insights</a>
+                  <a href="https://stocktracker.nasdaq.com/smart-portfolio/performance" onclick="triggerAsyncOmnitureClickEvent('nav:my-nasdaq:performance')">My Performance</a>
+                </li>
+              </ul>
+            </div>
+            <div id="communitynav" class="floatR half">
+              <ul>
+                <li>
+                  <p class="margin0px">Join the Nasdaq Community today and get free, instant access to portfolios, stock ratings, real-time alerts, and more!</p>
+                  <div class="clearB margin5px"></div>
+                  <a href="https://community.nasdaq.com/" onclick="triggerAsyncOmnitureClickEvent('nav:my-nasdaq:register')">Join Today</a>
+                  <div class="clearB margin5px"></div>
+                </li>
+                <li>
+                  <h4>Already a member?</h4>
+                  <div class="clearB margin5px"></div>
+                  <a href="https://community.nasdaq.com/login.aspx" onclick="triggerAsyncOmnitureClickEvent('nav:my-nasdaq:login')">Login</a>
+                </li>
+              </ul>
+            </div>
+            <div class="clearB"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <div id="global_nav_placeholder"></div>
+  <div class="global_search" id="global_search">
+    <div class="wrapper">
+      <div class="left-ad-unit120">
+        <script type="text/javascript" language="javascript">
+          makeAd('','120x60','bookend_left',is_dartZone,'','');
+        </script>
+        <!--// <script type="text/javascript" language="javascript">
+          makeAd('','120x60','Bookend_Left_In',is_dartZone,'','');
+        </script> -->
+		<div id="amp-10017">
+			<script type="text/javascript">
+				setTimeout(function(){
+					!function(a,e,t,n,c){a[n]=a[n]||{},a[n][c]=a[n][c]||[];var o="script",r=e.createElement(o);r.src=e.location.protocol+t,r.async=1;var m=e.getElementsByTagName(o)[0];m.parentNode.insertBefore(r,m)}(window,document,"//static.ampxchange.com/tiles/v1.1/js/ad-min.js","AMP","tilesTagCmd");
+					AMP.tilesTagCmd.push(function() {
+						AMP.tilesTag.requestAd(
+							{
+								partner: "nasdaq_tiles",
+								sub1: "10017",
+								sub2: "nasdaq.com",
+								v: "1.2",
+								results: "2",
+								width: "160",
+								height: "60",
+								element_id: "amp-10017"
+							}
+						);
+					});
+				}, 4000);
+			</script>
+		</div>
+      </div>
+      <!--//End 120x60 Ad Unit -->
+      <form method="post" action="/" id="stock-search" class="stock-search" onsubmit="return false;">
+        <div id="stock-search-wrap">
+          <label for="stock-search-text">
+            <input type="text" name="stock-search-text" id="stock-search-text" class="ajax-search" placeholder="Enter symbol, name or keyword" />
+            <button type="submit" id="stock-search-submit">
+              <span></span>
+            </button>
+          </label>
+        </div>
+      </form>
+      <script type="text/javascript">
+        if(!isIEBrowser() && !isMobileBrowser() && !isTabletBrowser())
+        {
+        $(function(){
+        $('#stock-search-text').focus();
+        });
+        }
+        Nasdaq_Quotesearch.init();
+      </script>
+      <div class="right-ad-unit120">
+        <script type="text/javascript" language="javascript">
+          makeAd('','120x60','Bookend_Right',is_dartZone,'','');
+        </script>
+        <script type="text/javascript" language="javascript">
+          makeAd('','120x60','Bookend_Right_In',is_dartZone,'','');
+        </script>
+      </div>
+      <!--//End 120x60 Ad Unit -->
+    </div>
+  </div>
+
+  <!--** START ALERT ~/includes/masthead_alert.inc **-->
+
+<!-- 
+  <div id="masthead-alert" style="visibility:hidden;">
+    <h2 style="font-weight:bold;background-color: #0095c5;border: 0;color: #ffffff;font-size: 17px;margin: -15px 0 15px;overflow: hidden;padding: 10px 10px 10px 35px;position: relative;text-transform: uppercase;">
+      <span>Nasdaq Earnings: </span>
+
+      <a href="https://www.nasdaq.com/article/nasdaq-ndaq-4th-quarter-earnings-what-to-expect-cm1088683" style="color:white;">What to expect from Nasdaq's 4th quarter</a>
+    </h2>
+  </div>
+  -->
+
+<!-- Script for different page sizes and visibility change -->
+<script type="text/javascript">
+  setTimeout(function(){
+    document.getElementById('masthead-alert').style.visibility = "visible";
+  },5000);
+</script>
+
+<!--** END ALERT ~/includes/masthead_alert.inc **-->
+
+  <!--<div id="global_banner" class="wrapper">
+    <script type="text/javascript" language="JavaScript">
+      makeAd('','728x90,970x90,970x250',is_dartSite,is_dartZone,'','');
+    </script>
+  </div>
+  --><!--//End global_banner -->
+
+  <script>initNav();</script>
+</header>
+<!--//End global_header-->
+
+<!--*************************************** END includes/global-masthead.inc ******************************************-->
+
+
+<script type="text/javascript">
+    cacheLoginStatus(false, null, null, null, "https\x3a\x2f\x2fcommunity.nasdaq.com");
+</script>
+
+<div id="container" class="wrap cf">
+    <div id="content">
+        <div id="leaderboard">
+            <script type="text/javascript" language="JavaScript">makeAd('','728x90,970x90,970x250',is_dartSite,is_dartZone,'','');</script>
+        </div>
+        <div id="quotes-left-content">
+            <div class="qbreadcrumb">
+	            <span class="qbreadcrumb">
+                    
+	<a href="https://www.nasdaq.com">Home</a> &gt; 
+	<a href="https://www.nasdaq.com/quotes/">Quotes</a> &gt; 
+	<a href='https://www.nasdaq.com/symbol/t'>T</a> &gt;
+	<a href="https://www.nasdaq.com/quotes/dividend-history.aspx">Dividend History</a>
+	<!--BREADCRUMB-->
+
+	            </span>
+            </div>
+            
+            
+
+<!--// Begin includes/qwidget.ascx -->
+
+<div class="quotebar-wrap">
+
+<div class="header-wrap">
+    <div class="quote-wrap">
+	    <div class="quote-data-wrap">
+		    <div id="logo-wrap" class="floatL">
+			    
+			    <div class="clearB"></div>
+			    
+					<div id="followButtonNew" class="melt"></div>				    
+				
+		    </div>
+		    <div id="qwidget-quote-wrap">
+			    <div id="qwidget_pageheader"><h1>AT&amp;T Inc. Dividend Date &amp; History</h1> <b></b></div>
+			    <div class="clearB"></div>
+			    <div id="qwidget_quote" class="floatL marginTB5px">
+                    
+			        <div class="qwidget-symbol">T&nbsp;</div>
+                    
+				    <div id="qwidget_lastsale" class="qwidget-dollar">$30.46</div>
+	                <div class="qwidget-dollar"><div>*&nbsp;&nbsp;</div></div>
+				    <div id="qwidget_netchange" class="qwidget-cents qwidget-Red">0.16</div>
+	                <div id="qwidget-arrow"><div class="marginLR10px arrow-red"></div></div>
+				    <div id="qwidget_percent" class="qwidget-percent qwidget-Red" style="white-space:nowrap">0.52%</div>
+				    <a class="getAlerts" href="javascript:void(0)" onclick="getAlertHandler();"><span>Get T Alerts</span></a><br />
+			    </div>
+			    <div id="qwidget_markettimedate" class="floatL paddingB15px">
+				    <small>
+				        *Delayed - data as of <span id="qwidget_markettime">May 13, 2019 12:42 ET </span>&nbsp;-&nbsp;
+				        <a href="https://www.nasdaq.com/investing/online-brokers/" onclick="triggerAsyncOmnitureClickEvent('quotes:quote-bar:brokers')">
+				            Find a broker to begin trading T now
+				        </a>
+				    </small>
+			    </div>
+		    </div>
+		    <div id="qwidget-sector-wrap">
+			    <span id="qbar_exchangeLabel"><b>Exchange:</b>NYSE</span> <br />
+			    <span id="qbar_sectorLabel"><b>Industry: </b><a href="https://www.nasdaq.com/screening/companies-by-industry.aspx?industry=Public%2bUtilities">Public Utilities</a></span> <br />
+			    <b>Community Rating:</b> <script src="https://www.nasdaq.com/aspx/community/sentiment.aspx?selected=T&amp;size=small"></script> <br />
+			    
+	
+			    
+				    <b>View:&nbsp;</b>
+				    <span class="displayIB ValignT lightning-icon"></span>&nbsp;
+				    <a title="AT&amp;T&#32;Inc. Real-time Quote" href="https://www.nasdaq.com/symbol/t/real-time">T&nbsp;Real Time</a>
+			    
+
+			    
+		    </div>
+		    <div id="qwidget-sector-wrap" class="marginR10px">
+		        <script type="text/javascript">
+                    makeAd('3','120x60','box_button',is_dartZone,'','');
+					
+                    	var followObjID = "symbol_00206R102";
+					
+                    var followObjTitle = "AT\x26T Inc.";
+                    var followObj = {"object_id":"symbol_00206R102","object_type":"company","title":"AT&T Inc.","permalink":"https://www.nasdaq.com/symbol/t","image":null,"data":{"symbol":"T"}};
+					
+                </script>
+				
+<script>
+var SymbolType = "OTCBB/OTherOTC";
+var StockIndustry = "Public Utilities";
+</script>
+		    </div>
+	    </div>
+    </div><!--end quote-wrap-->
+</div><!-- end header-wrap -->
+
+</div>
+
+<!--// End includes/qwidget.ascx -->
+            <script type="text/javascript">
+var quoteBoxSelectedSymbol="T";
+
+var quoteBoxSymbolArray = new Array(9);
+quoteBoxSymbolArray[0] = "ACV";
+quoteBoxSymbolArray[1] = "T";
+quoteBoxSymbolArray[2] = "KIO";
+quoteBoxSymbolArray[3] = "GGN";
+quoteBoxSymbolArray[4] = "ITUB";
+quoteBoxSymbolArray[5] = "EQM";
+quoteBoxSymbolArray[6] = "VYM";
+quoteBoxSymbolArray[7] = "DIS";
+quoteBoxSymbolArray[8] = "PBTS";
+
+var quoteBoxNumSymbols = 9;
+
+var jsUserAgent = "Mozilla\x2f5.0 \x28Windows NT 10.0\x3b Win64\x3b x64\x29 AppleWebKit\x2f537.36 \x28KHTML, like Gecko\x29 Chrome\x2f74.0.3729.131 Safari\x2f537.36";
+
+var qbUseNewNav = true;
+</script>
+
+<script type="text/javascript"><!--inline script should be added to .inc files if we cannot added to if browser caching is a concern-->
+    // URL variables
+    var quoteURL = 'https://www.nasdaq.com/';
+    var wwwURL = 'https://www.nasdaq.com/';
+    var earningsURL = 'https://www.nasdaq.com/';
+    var screeningURL = 'https://www.nasdaq.com/';
+    var bLookup = false;
+    var selected = quoteBoxSelectedSymbol;
+
+    if (typeof qbUseNewNav == "undefined")
+        qbUseNewNav = false;
+
+    if (quoteBoxNumSymbols > 13) {
+        addStyle("dynamic", "#quotesnav_symbols_l {display:block;}");//
+        addStyle("dynamic", "#quotesnav_symbols_l_border {display:block;}");//
+    }
+    else {
+        addStyle("dynamic", "#quotesnav_symbols_l {display:none;}");//
+        addStyle("dynamic", "#quotesnav_symbols_l_border {display:none;}");//
+    }
+
+    addStyle("dynamic", "div.qbreadcrumb {left: 0px !important;height:0px;left:0px;top:0px;position:relative;width:800pxfloat:left;}");
+    addStyle("dynamic", "#qtopAd-graybg{float:left;font-size:11px;height:33px;padding:17px 0 0 5px;width:661px;position:relative;}");//
+    addStyle("dynamic", "#qtopAd-graybg-inside, #qtopAd-sponsored{float:left;}");//
+
+    function loginForAlerts() {
+        open_new_window("https://community.nasdaq.com/login.aspx?turl=" + encodeURIComponent("https://www.nasdaq.com/alerts/alertmanager.aspx?symbol=" + quoteBoxSelectedSymbol), 1020, 980, false, true, false);
+    }
+
+    //ad refresh for both 120x60 buttons on the quote nav
+    googletag.cmd.push(function () {
+        autoAdRefresh([6, 7], 40000);
+    });
+</script>
+<div class="symbol">
+    <div id="quotesnav_symbols_wrap" class="floatR">
+        <div id="quotesnav_symbols" class="quotesnav floatR">
+	        <div class="jcarousel-skin-tango">
+		        <div class="jcarousel-container jcarousel-container-horizontal">
+		            <div class="jcarousel-clip jcarousel-clip-horizontal">
+				        <ul class="jcarousel-list jcarousel-list-horizontal" id="mycarousel" style="width:795px">
+<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-0 jcarousel-item-0-horizontal" jcarouselindex="0"><span><a href="https://www.nasdaq.com/symbol/acv/dividend-history">ACV</a></span><div class="qtab-xbutton" title="Remove ACV from list" onclick="deleteSym(this,'ACV')">&nbsp;</div></li>
+<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal" jcarouselindex="1"><span><a class="qn_ontab" href="https://www.nasdaq.com/symbol/t/dividend-history">T</a></span></li>
+<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-2 jcarousel-item-2-horizontal" jcarouselindex="2"><span><a href="https://www.nasdaq.com/symbol/kio/dividend-history">KIO</a></span><div class="qtab-xbutton" title="Remove KIO from list" onclick="deleteSym(this,'KIO')">&nbsp;</div></li>
+<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-3 jcarousel-item-3-horizontal" jcarouselindex="3"><span><a href="https://www.nasdaq.com/symbol/ggn/dividend-history">GGN</a></span><div class="qtab-xbutton" title="Remove GGN from list" onclick="deleteSym(this,'GGN')">&nbsp;</div></li>
+<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-4 jcarousel-item-4-horizontal" jcarouselindex="4"><span><a href="https://www.nasdaq.com/symbol/itub/dividend-history">ITUB</a></span><div class="qtab-xbutton" title="Remove ITUB from list" onclick="deleteSym(this,'ITUB')">&nbsp;</div></li>
+<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-5 jcarousel-item-5-horizontal" jcarouselindex="5"><span><a href="https://www.nasdaq.com/symbol/eqm/dividend-history">EQM</a></span><div class="qtab-xbutton" title="Remove EQM from list" onclick="deleteSym(this,'EQM')">&nbsp;</div></li>
+<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-6 jcarousel-item-6-horizontal" jcarouselindex="6"><span><a href="https://www.nasdaq.com/symbol/vym/dividend-history">VYM</a></span><div class="qtab-xbutton" title="Remove VYM from list" onclick="deleteSym(this,'VYM')">&nbsp;</div></li>
+<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-7 jcarousel-item-7-horizontal" jcarouselindex="7"><span><a href="https://www.nasdaq.com/symbol/dis/dividend-history">DIS</a></span><div class="qtab-xbutton" title="Remove DIS from list" onclick="deleteSym(this,'DIS')">&nbsp;</div></li>
+<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-8 jcarousel-item-8-horizontal" jcarouselindex="8"><span><a href="https://www.nasdaq.com/symbol/pbts/dividend-history">PBTS</a></span><div class="qtab-xbutton" title="Remove PBTS from list" onclick="deleteSym(this,'PBTS')">&nbsp;</div></li>
+</ul>
+  			        </div>
+		        </div>
+	        </div>
+        </div>
+
+        <div id="quotesnav_symbols_border" class="quotesnav floatR">&nbsp;</div>
+
+        <div id="quotesnav_symbols_l" class="quotesnav floatR">
+	        <div class="jcarousel-skin-tango">
+		        <div class="jcarousel-container jcarousel-container-horizontal">
+		            <div class="jcarousel-clip jcarousel-clip-horizontal">
+				        <ul class="jcarousel-list jcarousel-list-horizontal" id="mycarousel" style="width:795px">
+</ul>
+  			        </div>
+		        </div>
+	        </div>
+        </div>
+
+        <div id="quotesnav_symbols_l_border" class="quotesnav floatR">&nbsp;</div>
+    </div>
+    </div>
+
+<div id="panel_left" class="vertical-nav-wrap floatL">
+
+    <div class="edit-symbol">
+		<form name="frmAddASymbol" method="get" onsubmit="return false">
+			<span>
+				<span class="displayIB ValignM marginB10px edit-symbol-icon"></span>
+                <a href="javascript:void(0);" onclick="triggerAsyncOmnitureClickEvent('quotes:modal:edit-symbols');pushmodal('edit_symbol_modal_box','editSymbolListModalBoxInit()');">Edit Symbol List</a>
+			</span>
+            <br />
+			<span><!--id added here-->
+				<span class="displayIB ValignM symbol-lookup-icon"></span>
+                <a href="javascript:void(0);" onclick="triggerAsyncOmnitureClickEvent('quotes:modal:symbol-lookup');pushmodal('symbol_lookup_modal_box','symbolLookupModalBoxinit(\'stock\')')">Symbol Lookup</a>
+			</span>	
+		</form>
+    </div><!--end qn_addsymbol-->
+
+	<div class="marginB10px">
+        <script type="text/javascript">makeAd('', '120x60', 'leftnav_top', is_dartZone, '', '');</script>
+    </div>
+
+    <div id="quotesnav" class="vertical-nav floatL">
+
+        <form name="quotenav" id="quotenav" method="get" onsubmit="return CheckInput()">
+		    <input id="mode" type="hidden">
+		    <input id="kind" type="hidden">
+		    <input id="timeframe" type="hidden">
+		    <input id="intraday" type="hidden">
+		    <input id="charttype" type="hidden">
+		    <input id="splits" type="hidden">
+		    <input id="earnings" type="hidden">
+		    <input id="movingaverage" type="hidden">
+		    <input id="lowerstudy" type="hidden">
+		    <input id="comparison" type="hidden">
+		    <input id="index" type="hidden">
+		    <input id="FormType" type="hidden">
+		    <input id="mkttype" type="hidden">
+		    <input id="pathname" type="hidden">
+		    <input id="headlinesswitch" type="hidden">
+		    <input id="pressreleaseswitch" type="hidden">
+		    <input id="extendedswitch" type="hidden">
+	        <select style="display:none" id="quotepage" onchange="CheckInput()">
+			    <option value="NasdaqLastsale">Real Time</option>
+			    <option value="nlstrades">NLS Trade Reporting</option>
+			    <option value="quick">FlashQuotes</option>
+			    <option value="multi">InfoQuotes</option>
+			    <option value="summaryquote">Summary Quote</option>
+			    <option value="charting">Charts</option>
+			    <option value="dynamic_charting">Interactive Charts</option>
+			    <option value="premarketcharts">Pre-Market Charts</option>
+			    <option value="afterhourscharts">After Hours Charts</option>
+			    <option value="redpage">Revenue / EPS Summary</option>
+			    <option value="full">Company Financials</option>
+			    <option value="competitor">- View Competitors</option>
+			    <option value="short">- Short Interest</option>
+			    <option value="companynews">Company News</option>
+			    <option value="companypressrelease">Press Releases</option>
+			    <option value="companynewsthestreet">Company News</option>
+			    <option value="companynewsthefool">Press Releases</option>
+			    <option value="sentiment">Sentiment</option>					
+			    <option value="analystinfo">Analyst Stock Research</option>
+			    <option value="stockreports">Stock Report</option>
+			    <option value="filings">SEC Filings</option>
+			    <option value="holdingssummary">- Holdings/Insider Summary</option>
+			    <option value="holdings">- Institutional Holdings</option>
+			    <option value="insiderform4">- Insider Form 4</option>
+			    <!--<option value="insiderform144">- Insider Form 144</option>-->
+			    <option value="options">Equity Options</option>
+			    <option value="premarket">Pre-Market Quotes</option>
+			    <option value="afterhours">After Hours Quotes</option>
+			    <option value="stockconsultant">Company Research</option>
+			    <option value="stockconsultant">- StockConsultant</option>
+			    <option value="stockcomparison">Stock Comparison</option>
+			    <option value="guruanalysis">- Guru Analysis</option>
+			    <option value="annualrpt">Annual Report</option>
+			    <option value="historical_quotes">Historical Quotes</option>
+			    <option value="CallTranscripts">Call Transcripts</option>
+			    <option value="dividend_history">Dividend History</option>
+			    <option value="guru-lynch">Lynch Analysis</option>
+			    <option value="guru-graham">Graham Analysis</option>
+			    <option value="guru-validea">Validea Momentum Analysis</option>
+			    <option value="guru-fool">Fool Analysis</option>
+			    <option value="guru-dreman">Dreman Analysis</option>
+			    <option value="guru-zweig">Zweig Analysis</option>
+			    <option value="guru-fisher">Fisher Analysis</option>
+			    <option value="guru-oshaughnessy">OShaughnessy Analysis</option>
+                <option value="etfdetail">ETF detail</option>
+                <option value="etfprofile">ETF Profile</option>
+			    <option value="chartingfunds">Comparison Charts</option>
+	        </select>
+        </form>
+	
+        <iframe name="validateSymbolForm" id="validateSymbolForm" frameborder="0" height="0" width="0"></iframe>
+		
+
+        <h5>Symbol List Views</h5>
+            <a id="quicklink" href="https://www.nasdaq.com/aspx/flashquotes.aspx?symbol=T&amp;selected=T" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:flashquote')">FlashQuotes</a>
+            <a id="multilink" href="https://www.nasdaq.com/aspx/infoquotes.aspx?symbol=T&amp;selected=T" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:infoquote')">InfoQuotes</a>
+
+        <h5> 
+                    Stock Details
+           
+        </h5>
+            <a id="summaryquotelink" href="https://www.nasdaq.com/symbol/t" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:summary')">Summary Quote</a>
+		        
+            <a id="NasdaqLastsalelink" href="https://www.nasdaq.com/symbol/t/real-time" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:real-time')">Real-Time Quote</a>
+            <a id="afterhourslink" href="https://www.nasdaq.com/symbol/t/after-hours" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:after-hours')">After Hours Quote</a>
+            <a id="premarketlink" href="https://www.nasdaq.com/symbol/t/premarket" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:pre-market')">Pre-market Quote</a>
+	        <a id="historical_quoteslink" href="https://www.nasdaq.com/symbol/t/historical" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:historical')">Historical Quote</a>
+	        <a id="optionslink" href="https://www.nasdaq.com/symbol/t/option-chain" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:option-chain')">Option Chain</a>	  
+      
+        <h5>CHARTS</h5>
+            <a id="chartinglink" href="https://www.nasdaq.com/symbol/t/stock-chart" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:stock-chart')">Basic Chart</a>
+            <a id="dynamic_chartinglink" href="https://www.nasdaq.com/symbol/t/interactive-chart" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:interactive-chart')">Interactive Chart</a>   
+  
+        <h5>
+		        
+    
+                COMPANY NEWS</h5>
+                    <a id="companynewslink" href="https://www.nasdaq.com/symbol/t/news-headlines" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:news-headlines')">Company Headlines</a>
+                    <a id="companypressreleaselink" href="https://www.nasdaq.com/symbol/t/press-releases" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:press-releases')">Press Releases</a>
+                    <a id="sentimentlink" href="https://www.nasdaq.com/symbol/t/stream" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:stream')">Market Stream</a>
+        
+                
+    
+                <h5>STOCK ANALYSIS</h5>
+                    <a id="analystinfolink" href="https://www.nasdaq.com/symbol/t/analyst-research" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:analyst-research')">Analyst Research</a>
+                    <a id="guruanalysislink" href="https://www.nasdaq.com/symbol/t/guru-analysis" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:guru-analysis')">Guru Analysis</a>
+                    <a id="stockreportslink" href="https://www.nasdaq.com/symbol/t/stock-report" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:stock-report')">Stock Report</a>
+                    <a id="competitorlink" href="https://www.nasdaq.com/symbol/t/competitors" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:competitors')">Competitors</a>
+			        <a id="stockconsultantlink" href="https://www.nasdaq.com/symbol/t/stock-consultant" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:stock-consultant')">Stock Consultant</a>
+			        <a id="stockcomparisonlink" href="https://www.nasdaq.com/symbol/t/stock-comparison" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:stock-comparison')">Stock Comparison</a>
+                <h5>FUNDAMENTALS</h5>
+                    <a id="CallTranscriptslink" href="https://www.nasdaq.com/symbol/t/call-transcripts" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:call-transcripts')">Call Transcripts</a>
+        	        <a id="annualrptlink" href="http://www.companyspotlight.com/partner?cp_code=NAS1&amp;ticker=T" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:annual-report')">Annual Report</a>
+                    <a id="fulllink" href="https://www.nasdaq.com/symbol/t/financials?query=income-statement" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:income-statement')">Income Statement</a>
+                    <a id="redpagelink" href="https://www.nasdaq.com/symbol/t/revenue-eps" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:revenue-eps')">Revenue/EPS</a>
+                   <a id="filingslink" href="https://www.nasdaq.com/symbol/t/sec-filings" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:sec-filings')">SEC Filings</a>
+			        <a id="shortlink" href="https://www.nasdaq.com/symbol/t/short-interest" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:short-interest')">Short Interest</a>
+			        <a id="dividend_historylink" href="https://www.nasdaq.com/symbol/t/dividend-history" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:dividend-history')">Dividend History</a>
+                <h5>HOLDINGS</h5>
+                    <a id="holdingssummarylink" href="https://www.nasdaq.com/symbol/t/ownership-summary" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:ownership-summary')">Ownership Summary</a>
+                    <a id="holdingslink" href="https://www.nasdaq.com/symbol/t/institutional-holdings" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:institutional-holdings')">Institutional Holdings</a>
+                    <a id="insiderform4link" href="https://www.nasdaq.com/symbol/t/insider-trades" onclick="triggerAsyncOmnitureClickEvent('quotes:nav:insider-trades')">Insiders<br />(SEC Form 4)</a>
+
+            
+    </div><!-- quotesnav -->
+
+</div><!-- end panel left-->
+
+<!-- modal box implementations -->
+
+<!-- edit symbol box-->
+
+<div id="edit_symbol_modal_box" class="modal_content" style="width:410px;height:315px;top:100px;left:400px">
+	<!-- close button-->
+	<span class="close" onclick="popmodal()">CLOSE<span class="x">X</span></span><br />
+	<!-- header -->
+	<div class="TalignC">
+		<h2>Edit Symbol List</h2>
+	</div>
+	<!-- text -->
+	<div class="marginL10px">
+		<p>Enter up to 25 symbols separated by commas or spaces in the text box below. These symbols will be available during your session for use on applicable pages.</p>
+	</div>
+
+	<div class="marginL10px">
+		<!-- input box -->
+		<div class="floatL">
+			<textarea rows="3" cols="40" name="modalinput" id ="modalinput" onkeypress="if(event.keyCode ==13){gomodal();}else if(event.keyCode == 27){popmodal();}"></textarea>
+		</div>
+		<!-- right side controls -->
+		<div class="floatL marginL10px">
+			<a href="javascript:void(0)" onclick="gomodal();" class="lightgreen-button marginB5px TalignC">Go Now</a>
+            <br />
+			<a href="javascript:void(0)" onclick="clearlist();" class="red-button">Clear List</a>			
+		</div>
+	</div>
+
+    <div class="clearB"></div>
+
+	<!-- symbol lookup text-->
+	<div class="marginL10px">
+		<p>
+            Don't know the stock symbol?  Use the 
+            <a href="javascript:void(0);" onclick="triggerAsyncOmnitureClickEvent('edit-symbols:modal:symbol-lookup');pushmodal('symbol_lookup_modal_box','symbolLookupModalBoxinit()')">Symbol Lookup</a> tool.
+	        <br/>
+		    <input type="checkbox" id="orderlistcontrol" class="marginR5px" onclick="triggerAsyncOmnitureClickEvent('edit-symbols:checkbox:alphabetize')" />Alphabetize the sort order of my symbols
+		</p>
+	</div>
+
+</div>
+
+<!-- end edit symbol box -->
+
+<!-- symbol lookup modal box -->
+<div id="symbol_lookup_modal_box" class="modal_content" style="width:440px;min-height:370px;top:100px;left:35%">
+	<!-- close button-->
+	<span class="close" onclick="popmodal()">CLOSE<span class="x">X</span></span>
+	<div class="clearB paddingT5px"></div>
+	<table width="415" class="marginL5px">
+        <tr><td>&nbsp;</td></tr>
+		<tr><td><h2>Symbol Lookup</h2></td></tr>
+	</table>
+	<iframe id="msymbollookupframe" frameborder="0" style="width:100%;height:255px"></iframe>
+</div>
+<!-- end symbol lookup modal box -->
+<!-- begin lightbox backdrop -->
+<table class="backdrop" id="customModal">
+	<tr>
+		<td>
+            <!-- begin lightboxness -->
+            <div class="lightbox" id="followPromo">
+				<!-- close button-->
+				<span class="close" onclick="close_modal()">CLOSE<span class="x">X</span></span>
+                <h2>Investing just got easier&#8230;</h2>
+                <h4>Sign up now to become a NASDAQ.com member and begin receiving instant notifications when key events occur that affect the stocks you follow.</h4>
+                <a class="faux-button lightgreen-button" href="https://community.nasdaq.com/" onclick="triggerAsyncOmnitureClickEvent('quotes:faux-follow:access-now')">
+                    <span>Access Now</span>
+                </a>
+                <div class="clearB"></div>
+                
+            </div>
+            <!-- end lightboxness -->
+         </td>
+	</tr>
+</table>
+<!-- end lightbox backdrop -->
+
+<script type="text/javascript">
+    function close_modal()//closes all custom modal boxes
+    {
+        $('#customModal .lightbox').removeClass('visible');
+        $('#customModal').removeClass('visible');
+    }
+
+    function open_modal(contentID)//opens a custom modal box, contentID is the unique ID
+    {
+        $('#customModal').addClass('visible'); //display the loading box
+        $('#' + contentID).addClass('visible');
+    }
+
+    function switch_to_modal(contentID)//switches from one custom modal box to another, contentID is the unique ID
+    {
+        $('#customModal .lightbox').removeClass('visible');
+        $('#' + contentID).addClass('visible');
+    }
+</script>
+            <div class="q-gray-wrap">
+                <!--// begin cookie checkbox -->
+                <div class="quotenav_checkbox-leftgray">
+                    <input type="checkbox" id="cookiepref" onclick="triggerAsyncOmnitureClickEvent('quotes:checkbox:save-stocks');toggleCookieNav()">&nbsp;Save Stocks
+                </div>
+                <!--// end cookie checkbox -->
+                <!--// begin 980 unit -->
+                <div id="qtop-graybg">
+                    
+<div id="qtop-graybg-inside">
+    <script type="text/javascript">
+	    makeAd('8','980x20,300x25',is_dartSite,is_dartZone,'','');
+    </script>
+</div>
+<div id="additional-88x31">
+    <script type="text/javascript">makeAd('','88x31',is_dartSite,is_dartZone,'','');</script>
+</div>
+
+                </div>
+                <!--// end 980 unit -->
+            </div>
+            
+            <div id="left-column-div">
+                
+    <!-- START 2 column main content -->
+    <form method="post" action="./dividend-history?symbol=T&amp;selected=T" id="dividenddata">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['dividenddata'];
+if (!theForm) {
+    theForm = document.dividenddata;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="11096220" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="l5677x7wHHz5NuGLj+T8DjwmS+RLgutORO1Pa8MdeMijMdjNBEcPilcxNLemdQeZRGfCX7TaEwjJsvg/89MikoM+/UwB3VlXnduOrt/4NTuAJXFUTAjo0GXqw75W1ZrteG0Dbsr36PrfEyBLs8H6bupxKG0C/ZL864z3+aTVF4I/hC7D+jhGmulwNAmecs8Q2EgqhK3iF+B/jHnZrRqI5c3V46Yokc+Kt2SDoM38NuA=" />
+</div>
+	    
+
+        <div id="quotes_content_left_QuotesinfoPanel">
+	
+        
+</div>
+        <p>
+            The Dividend History page provides a single page to review all of the aggregated Dividend payment information. 
+            Visit our <a href="https://www.nasdaq.com/dividend-stocks/dividend-calendar.aspx">Dividend Calendar</a>: 
+            Our partner, Zacks Investment Research, provides the upcoming ex-dividend dates for the next month.
+        </p>
+		<div class="genTable">
+			<div id="quotes_content_left_ContentPanel">
+	
+				<div>
+		<table cellspacing="1" align="Center" rules="all" border="1" id="quotes_content_left_dividendhistoryGrid">
+			<thead>
+				<tr align="left" style="font-weight:bold;">
+					<th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$quotes_content_left$dividendhistoryGrid&#39;,&#39;Sort$ExDate&#39;)">Ex/Eff Date</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$quotes_content_left$dividendhistoryGrid&#39;,&#39;Sort$Type&#39;)">Type</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$quotes_content_left$dividendhistoryGrid&#39;,&#39;Sort$CashAmount&#39;)">Cash Amount</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$quotes_content_left$dividendhistoryGrid&#39;,&#39;Sort$DeclarationDate&#39;)">Declaration Date</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$quotes_content_left$dividendhistoryGrid&#39;,&#39;Sort$RecordDate&#39;)">Record Date</a></th><th scope="col"><a href="javascript:__doPostBack(&#39;ctl00$quotes_content_left$dividendhistoryGrid&#39;,&#39;Sort$PaymentDate&#39;)">Payment Date</a></th>
+				</tr>
+			</thead><tbody>
+				<tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_0">4/9/2019</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_0">0.51</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_0">3/29/2019</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_0">4/10/2019</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_0">5/1/2019</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_1">1/9/2019</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_1">0.51</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_1">--</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_1">1/10/2019</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_1">2/1/2019</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_2">10/9/2018</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_2">0.5</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_2">9/28/2018</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_2">10/10/2018</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_2">11/1/2018</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_3">7/9/2018</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_3">0.5</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_3">6/29/2018</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_3">7/10/2018</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_3">8/1/2018</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_4">4/9/2018</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_4">0.5</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_4">3/30/2018</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_4">4/10/2018</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_4">5/1/2018</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_5">1/9/2018</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_5">0.5</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_5">12/15/2017</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_5">1/10/2018</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_5">2/1/2018</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_6">10/6/2017</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_6">0.49</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_6">9/29/2017</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_6">10/10/2017</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_6">11/1/2017</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_7">7/6/2017</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_7">0.49</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_7">6/30/2017</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_7">7/10/2017</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_7">8/1/2017</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_8">4/6/2017</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_8">0.49</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_8">3/31/2017</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_8">4/10/2017</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_8">5/1/2017</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_9">1/6/2017</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_9">0.49</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_9">10/24/2016</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_9">1/10/2017</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_9">2/1/2017</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_10">10/5/2016</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_10">0.48</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_10">9/30/2016</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_10">10/10/2016</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_10">11/1/2016</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_11">7/6/2016</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_11">0.48</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_11">6/24/2016</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_11">7/8/2016</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_11">8/1/2016</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_12">4/6/2016</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_12">0.48</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_12">3/28/2016</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_12">4/8/2016</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_12">5/2/2016</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_13">1/6/2016</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_13">0.48</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_13">12/22/2015</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_13">1/8/2016</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_13">2/1/2016</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_14">10/7/2015</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_14">0.47</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_14">9/25/2015</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_14">10/9/2015</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_14">11/2/2015</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_15">7/8/2015</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_15">0.47</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_15">6/26/2015</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_15">7/10/2015</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_15">8/3/2015</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_16">4/8/2015</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_16">0.47</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_16">3/27/2015</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_16">4/10/2015</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_16">5/1/2015</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_17">1/7/2015</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_17">0.47</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_17">12/19/2014</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_17">1/9/2015</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_17">2/2/2015</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_18">10/8/2014</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_18">0.46</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_18">9/26/2014</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_18">10/10/2014</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_18">11/3/2014</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_19">7/8/2014</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_19">0.46</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_19">6/27/2014</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_19">7/10/2014</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_19">8/1/2014</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_20">4/8/2014</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_20">0.46</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_20">3/28/2014</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_20">4/10/2014</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_20">5/1/2014</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_21">1/8/2014</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_21">0.46</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_21">12/13/2013</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_21">1/10/2014</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_21">2/3/2014</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_22">10/8/2013</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_22">0.45</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_22">9/27/2013</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_22">10/10/2013</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_22">11/1/2013</span>
+                            </td>
+				</tr><tr>
+					<td>
+                                <span id="quotes_content_left_dividendhistoryGrid_exdate_23">7/8/2013</span> 
+                            </td><td>Cash</td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_CashAmount_23">0.45</span> 
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_DeclDate_23">6/28/2013</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_RecDate_23">7/10/2013</span>
+                            </td><td>
+                                <span id="quotes_content_left_dividendhistoryGrid_PayDate_23">8/1/2013</span>
+                            </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+			
+</div>
+			
+		</div>
+    </form>
+
+    <div class="clearB"></div>
+    <br />
+
+    
+    <div id="rcjsload_9b145e"></div>
+    <script type="text/javascript">
+        (function() {
+        var referer="";try{if(referer=document.referrer,"undefined"==typeof referer||""==referer)throw"undefined"}catch(exception){referer=document.location.href,(""==referer||"undefined"==typeof referer)&&(referer=document.URL)}referer=referer.substr(0,700);
+        var rcds = document.getElementById("rcjsload_9b145e");
+        var rcel = document.createElement("script");
+        rcel.id = 'rc_' + Math.floor(Math.random() * 1000);
+        rcel.type = 'text/javascript';
+        rcel.src = "//trends.revcontent.com/serve.js.php?w=100073&t="+rcel.id+"&c="+(new Date()).getTime()+"&width="+(window.outerWidth || document.documentElement.clientWidth)+"&referer="+referer;
+        rcel.async = true;
+        rcds.appendChild(rcel);
+        })();
+    </script>
+
+    <div class="clearB"></div>
+    <br />
+
+    <!--Smartad # 4722: Nasdaq - Below Quotes Desktop - 820x270-->
+    <iframe WIDTH="820" HEIGHT="270" SCROLLING="NO" src="//www.dianomi.com/smartads.epl?id=4722"  style="width: 100%; height: 270px; border: none; overflow: hidden;"></iframe>
+
+    <div class="clearB"></div>
+    <br />
+
+
+            </div><!--// end left-column-div-->
+        </div><!--// end quotes-left-content -->
+	</div><!--// end content -->
+    <div id="right-column-div">
+        
+<script type="text/javascript">
+switch (Math.floor(Math.random() * 2) + 1) {
+	case 1:
+		makeAd('8', '300x250, 300x600', is_dartSite, is_dartZone, '', '');
+		break;
+	case 2:
+		makeAd('8', '300x250, 300x600', is_dartSite, is_dartZone, '', '');
+		break;
+}
+</script>
+
+<div class="clearB"></div>
+<br />
+<div class="divider"></div>
+<div class="clearB"></div>
+<br />
+
+<div id="amp-10020">
+    <script type="text/javascript">
+                setTimeout(function () {
+                    !function (a, e, t, n, c) { a[n] = a[n] || {}, a[n][c] = a[n][c] || []; var o = "script", r = e.createElement(o); r.src = e.location.protocol + t, r.async = 1; var m = e.getElementsByTagName(o)[0]; m.parentNode.insertBefore(r, m) }(window, document, "//static.ampxchange.com/tiles/v1.1/js/ad-min.js", "AMP", "tilesTagCmd");
+                    AMP.tilesTagCmd.push(function () {
+                        AMP.tilesTag.requestAd(
+                            {
+                                partner: "nasdaq_tiles",
+                                sub1: "10020",
+                                sub2: "nasdaq.com_right",
+                                v: "1.2",
+                                results: "3",
+                                width: "300",
+                                height: "60",
+                                element_id: "amp-10020"
+                            }
+                        );
+                    });
+                }, 4000);
+            </script>
+</div>
+
+<div class="clearB"></div>
+<br />
+<div class="divider"></div>
+<div class="clearB"></div>
+<br />
+
+
+<div class="rail-module">
+    <h2>Latest News Headlines</h2>
+    <ul>
+        
+                <li>
+                    <span>
+                        <a href="https://www.nasdaq.com/article/slack-listing-planned-for-june-20-in-wake-of-underwhelming-uber-ipo-20190513-00801">
+                            Slack listing planned for June 20 in wake of underwhelming Uber IPO
+                        </a>
+                    </span>
+	                <br />    
+	                <span class="small">
+	                    12:37PM ET&nbsp; - Reuters
+	                </span>
+                </li>
+            
+                <li>
+                    <span>
+                        <a href="https://www.nasdaq.com/article/us-bonds-market-rallies-as-china-plans-tariff-retaliation-20190513-00805">
+                            U.S. bonds market rallies as China plans tariff retaliation
+                        </a>
+                    </span>
+	                <br />    
+	                <span class="small">
+	                    12:33PM ET&nbsp; - Reuters
+	                </span>
+                </li>
+            
+                <li>
+                    <span>
+                        <a href="https://www.nasdaq.com/press-release/global-water-resources-director-of-water-resources-jake-lenderking-appointed-to-pinal-county-water-20190513-00795">
+                            Global Water Resources’ Director of Water Resources, Jake Lenderking, Appointed to Pinal County Wat
+                        </a>
+                    </span>
+	                <br />    
+	                <span class="small">
+	                    12:30PM ET&nbsp; - GlobeNewswire
+	                </span>
+                </li>
+            
+                <li>
+                    <span>
+                        <a href="https://www.nasdaq.com/press-release/cbd--cannabis-beverage-market-insider-perspectives-from-leaders-targeting-billion-dollar-20190513-00789">
+                            CBD & Cannabis Beverage Market: Insider Perspectives From Leaders Targeting Billion Dollar Opportun
+                        </a>
+                    </span>
+	                <br />    
+	                <span class="small">
+	                    12:24PM ET&nbsp; - GlobeNewswire
+	                </span>
+                </li>
+            
+    </ul>
+    <div class="clearB"></div>
+    <span class="view-all-anchor floatR">
+               <a href="/news/market-headlines.aspx">
+            <span>View All Latest Headlines</span>
+        </a>
+    </span>
+    <div class="clearB"></div>
+</div>
+
+<div class="divider"></div>
+
+<!--
+  ~ Copyright (C) 2014 Media.net Advertising FZ-LLC All Rights Reserved
+-->
+<div id="489283227">
+    <script type="text/javascript">
+        try {
+            window._mNHandle.queue.push(function () {
+                window._mNDetails.loadTag("489283227", "300x200", "489283227");
+            });
+        }
+        catch (error) {
+        }
+    </script>
+</div>
+
+<div class="clearB"></div>
+<div class="divider"></div>
+
+<!--// Begin Inner Index Table Widget -->
+    <div id="RailIndexTable" class="genTable">
+        <h3 class="table-headtag">Today's Market Activity</h3>
+            
+<!--// Begin markets/MarketActivityIndex.ascx -->
+<table>
+    <tbody>
+        
+            <tr>
+                <td width="75" class="indexname">
+                    <strong>NASDAQ</strong>
+                </td>
+                <td><b>7640.43</b></td>
+                <td class="red">
+                    <div class="floatR">
+                        <span><b>-276.51</b></span>
+                        <span class="indexArrow"><b>&nbsp;&#9660;&nbsp;</b></span>
+                        <span><b>3.49%</b></span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr>
+                <td width="75" class="indexname">
+                    <strong>DJIA</strong>
+                </td>
+                <td><b>25238.07</b></td>
+                <td class="red">
+                    <div class="floatR">
+                        <span><b>-704.30</b></span>
+                        <span class="indexArrow"><b>&nbsp;&#9660;&nbsp;</b></span>
+                        <span><b>2.71%</b></span>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr>
+                <td width="75" class="indexname">
+                    <strong>S&P 500</strong>
+                </td>
+                <td><b>2803.36</b></td>
+                <td class="red">
+                    <div class="floatR">
+                        <span><b>-78.04</b></span>
+                        <span class="indexArrow"><b>&nbsp;&#9660;&nbsp;</b></span>
+                        <span><b>2.71%</b></span>
+                    </div>
+                </td>
+            </tr>
+            
+    </tbody>
+</table>
+<!--// End markets/MarketActivityIndex.ascx -->
+    </div>
+    <div class="floatL paddingT10px">
+        
+<table id="homepageIndexRow" border="0" cellpadding="0" cellspacing="0">
+<tr>
+    <td id="homepageIndexRowTime" class="paddingL5px small" itemprop="dateModified" content="2019-05-13T13:00:00-05:00">Data as of&nbsp;May&nbsp;13,&nbsp;2019&nbsp;|&nbsp;1:00PM</td>
+</tr>
+</table>
+    </div>
+    <div class="view-all-anchor floatR">
+        <a href="https://www.nasdaq.com/markets/indices/major-indices.aspx" onclick="triggerAsyncOmnitureClickEvent('right-rail:module:indices')">
+            <span>View All</span>
+        </a>
+    </div>
+<!--// End Inner Index Table Widget -->
+
+<div class="clearB"></div>
+<br />
+<div class="divider"></div>
+<div class="clearB"></div>
+<br />
+
+<script type="text/javascript">makeAd('', '300x250,300x600,285x100', 'mop', is_dartZone, '', '');</script>
+
+<div class="clearB"></div>
+<br />
+<div class="divider"></div>
+<div class="clearB"></div>
+<br />
+
+<!--Smartad # 4749: Nasdaq - Right Rail Quotes Desktop - 300x450-->
+<iframe WIDTH="300" HEIGHT="450" SCROLLING="NO" src="//www.dianomi.com/smartads.epl?id=4749"  style="width: 300px; height: 450px; border: none; overflow: hidden;"></iframe>
+
+<div class="clearB"></div>
+<br />
+<div class="divider"></div>
+<div class="clearB"></div>
+<br />
+
+<div id="slot1"></div>
+<script type="text/javascript">makeDeferredAd('', '300x250,300x600,160x600', 'btf', is_dartZone, 'slot1');</script>
+
+
+
+
+<div class="divider"></div>
+
+<div id="slot2"></div>
+<script type="text/javascript">makeAd('', '1x1', 'btf', is_dartZone, '', '');</script>
+
+    </div><!--// end right-column-div-->
+    <!-- START Google Ads includes/footer_googAd.inc-->
+
+<div class="clearB"></div>
+<br /><br />
+
+<div class="footer_googAd marginLAuto marginRAuto" style="width:728px;">
+  <div id="footerAd"></div><!-- placeholder for footer ad -->
+  <script>
+    footerAdDisplay();
+  </script>
+</div>
+
+<!-- END Google Ads includes/footer_googAd.inc-->
+
+
+    <div id="back-to-top" title="Scroll back to top" onclick="triggerAsyncOmnitureClickEvent('master:global-object:back-to-top')"><span></span></div>
+</div><!--// end wrap-->
+<!-- begin includes/fixedFooter.inc-->
+<!--// begin footer -->
+<footer class="site__footer">
+	<div class="site__footer--primary">
+		<div class="wrapper">
+			<a href="https://www.nasdaq.com/" class="logo">
+				<div></div>
+			</a>
+			<div class="floatR">
+				<a href="https://www.facebook.com/NASDAQ" class="icon icon-facebook">
+					<span></span>
+				</a>
+				<a href="https://twitter.com/nasdaq" class="icon icon-twitter">
+					<span></span>
+				</a>
+				<a href="https://plus.google.com/+nasdaq" class="icon icon-google-plus">
+					<span></span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="site__footer--secondary">
+		<div class="wrapper">
+			<nav class="site__footer__nav">
+				<ul>
+					<li><a href="https://www.nasdaq.com/" title="Nasdaq"><strong>Nasdaq.com</strong></a></li>
+					<li><a href="https://www.nasdaq.com/quotes/company-news.aspx" title="Company News">Company News</a><span>&#47;</span></li>
+					<li><a href="https://www.nasdaq.com/services/annual-reports.aspx" title="Annual Report">Annual Report</a><span>&#47;</span></li>
+					<li><a href="https://www.nasdaq.com/help/contact-information.aspx" title="Contact">Contact</a><span>&#47;</span></li>
+          <li><a href="https://business.nasdaq.com/discover/careers/index.html" title="Careers">Careers</a><span>&#47;</span></li>
+					<li><a href="https://www.nasdaq.com/help/nasdaq-advertising.aspx" title="Advertise on Nasdaq.com">Advertise on Nasdaq.com</a><span>&#47;&nbsp;</span></li><li><a href="https://m.nasdaq.com/symbol/t/dividend-history" onclick="mobileModule.accessMobileSite();">Mobile Version</a></li>
+				</ul>
+				<ul class="lighter">
+					<li><a href="https://www.nasdaq.com/about/terms.aspx" title="Terms of Use">Terms of Use</a><span>&#47;</span></li>
+					<li><a href="https://business.nasdaq.com/privacy-statement/" title="Privacy Policy">Privacy Policy</a><span>&#47;</span></li>
+					<li><a href="https://www.nasdaq.com/help/sitemap.aspx" title="Sitemap">Sitemap</a><span>&#47;</span></li>
+					<li><a href="https://www.nasdaq.com/investing/glossary/" title="Glossary">Glossary</a><span>&#47;</span></li>
+					<li><a href="https://www.nasdaq.com/feedback/" title="Feedback">Feedback</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</footer>
+<!--// end footer -->
+<!-- begin lightbox backdrop -->
+<table class="backdrop" id="backdrop">
+	<tr>
+		<td>
+			<!-- begin lightboxness -->
+			<div class="lightbox edit-stocks" id="edit-stocks">
+				<!-- close button-->
+				<span class="close">CLOSE<span class="x">X</span></span>
+				<div class="floatL">
+					<h2><center>Edit Favorites</center></h2>
+					<!-- text -->
+					<p>Enter up to 25 symbols separated by commas or spaces in the text box below. These symbols will be available during your session for use on applicable pages.</p>
+					<!-- input box -->
+					<div class="floatL">
+						<textarea onkeypress="if(event.keyCode ==13){nasdaqIndexRow.myListGo()}else if(event.keyCode == 27){$('.close').click();}" id="myListInput" name="myListInput" cols="35" rows="3" class="fontS14px"></textarea>
+					</div>
+					<!-- right side controls -->
+					<div class="floatL marginL10px">
+						<a href="javascript:void(0)" class="lightgreen-button marginB5px TalignC" onclick="nasdaqIndexRow.myListGo();">Update</a>
+						<br />
+						<a href="javascript:void(0)" class="red-button" onclick="nasdaqIndexRow.clearMyList();">Clear List</a>
+					</div>
+				</div>
+			</div>
+			<!-- end lightboxness -->
+			<!-- begin lightboxness -->
+			<div class="lightbox stock-searches" id="stock-searches">
+				<!-- close button-->
+				<span class="close">CLOSE<span class="x">X</span></span>
+				<h2>Customize your NASDAQ.com experience</h2>
+				<b>Background Color Selector</b>
+				<br />
+				<span>Select the background color of your choice:</span>
+				<div class="clearB"></div>
+				<div id="BgSelector">
+					<div>
+						<div class="BgSelector-1">
+							<div class="floatL">
+								<input type="radio" name="themepreference" value="blackg" onclick="updateSiteTheme(this.value)">&nbsp;Black
+							</div>
+							<div class="BgSelector-color"></div>
+						</div>
+						<div class="clearB"></div>
+						<div class="BgSelector-2">
+							<div class="floatL">
+								<input type="radio" name="themepreference" value="slateg" onclick="updateSiteTheme(this.value)">&nbsp;Slate Gray
+							</div>
+							<div class="BgSelector-color"></div>
+						</div>
+					</div>
+					<div>
+						<div class="BgSelector-3">
+							<div class="floatL">
+								<input type="radio" name="themepreference" value="lightg" onclick="updateSiteTheme(this.value)">&nbsp;Light Gray
+							</div>
+							<div class="BgSelector-color"></div>
+						</div>
+						<div class="clearB"></div>
+						<div class="BgSelector-4">
+							<div class="floatL">
+								<input type="radio" name="themepreference" value="grayb" onclick="updateSiteTheme(this.value)">&nbsp;Gray Blue
+							</div>
+							<div class="BgSelector-color"></div>
+						</div>
+					</div>
+				</div>
+				<div class="clearB"></div>
+				<hr /><br />
+				<b>Quote Search</b>
+				<br />
+				<span>Select a default target page for your quote search:</span>
+				<div id="QuoteSetting">
+					<div>
+						<input type="radio" name="quotepreference" value="realtime" onclick="Nasdaq_Quotesearch.confirmUserPref(this.value)">
+						&nbsp;Real-Time<br />
+						<input type="radio" name="quotepreference" value="afthours" onclick="Nasdaq_Quotesearch.confirmUserPref(this.value)">
+						&nbsp;After Hours<br />
+						<input type="radio" name="quotepreference" value="premkt" onclick="Nasdaq_Quotesearch.confirmUserPref(this.value)">
+						&nbsp;Pre-Market<br />
+						<input type="radio" name="quotepreference" value="compnews" onclick="Nasdaq_Quotesearch.confirmUserPref(this.value)">&nbsp;News
+					</div>
+					<div>
+						<input type="radio" name="quotepreference" value="flash" onclick="Nasdaq_Quotesearch.confirmUserPref(this.value)">
+						&nbsp;Flash Quote<br />
+						<input type="radio" name="quotepreference" value="summary" onclick="Nasdaq_Quotesearch.confirmUserPref(this.value)">
+						&nbsp;Summary Quote<br />
+						<input type="radio" name="quotepreference" value="dyncharts" onclick="Nasdaq_Quotesearch.confirmUserPref(this.value)">
+						&nbsp;Interactive Charts<br />
+						<input type="radio" name="quotepreference" value="default" onclick="Nasdaq_Quotesearch.confirmUserPref(this.value)">
+						&nbsp;Default Setting<br />
+					</div>
+				</div>
+				<div class="clearB"></div>
+				<span>
+					Please note that once you make your selection, it will apply to all future visits to NASDAQ.com.
+					If, at any time, you are interested in reverting to our default settings, please select Default Setting above.
+					<br /><br />
+					If you have any questions or encounter any issues in changing your default settings, please email <a href="mailto:isfeedback@nasdaq.com?Subject=Default%20Settings%20Inquiry">isfeedback@nasdaq.com</a>.
+				</span>
+			</div>
+			<!-- end lightboxness -->
+			<!-- begin lightboxness -->
+			<div class="lightbox" id="confirm">
+				<!-- close button-->
+				<span class="close">CLOSE<span class="x">X</span></span>
+				<h4>Please confirm your selection:</h4>
+				<p>
+					You have selected to change your default setting for the Quote Search. This will now be your default target page;
+					unless you change your configuration again, or you delete your
+					cookies. <b>Are you sure you want to change your settings?</b>
+				</p>
+				<div>
+					<button class="floatL"  onclick="Nasdaq_Quotesearch.confirmHandler('defaultQuote', true)">YES</button>
+					<button class="floatR"  onclick="Nasdaq_Quotesearch.confirmHandler('defaultQuote', false)">NO</button>
+				</div>
+			</div>
+			<!-- end lightboxness -->
+		</td>
+	</tr>
+</table>
+<!-- end lightbox backdrop -->
+<table class="backdrop" id="globalCustomModal">
+	<tr>
+		<td>
+            <!-- begin lightboxness -->
+            <div class="lightbox" id="adBlockMsg">
+				<!-- close button-->
+				<span class="close" onclick="close_global_modal()">CLOSE<span class="x">X</span></span>
+				<!-- <h2><center>We have a favor to ask</center></h2> -->
+				<!-- text -->
+				<p id="adBlockMsgText">Please disable your ad blocker (or <a href="https://www.nasdaq.com/help/adblock-instructions.aspx">update your settings</a> to ensure that javascript and cookies are enabled), so that we can continue to provide you with the first-rate market news and data you've come to expect from us.</p>
+			</div>
+            <!-- end lightboxness -->
+			<!-- begin lightboxness -->
+            <div class="lightbox" id="interstitialAdContainer" style="width:705px;height:575px">
+				<!-- close button-->
+				<span class="close" onclick="close_global_modal()">CLOSE<span class="x">X</span></span>
+				<!-- <h2><center>Sponsor Message</center></h2> -->
+				<!-- text -->
+				<p id="interstitialContainer"></p>
+			</div>
+            <!-- end lightboxness -->
+         </td>
+	</tr>
+</table>
+
+<!-- Omniture code -->
+
+<!--********************BEGIN  ../includes/omniture.inc***********************-->
+
+<!-- SiteCatalyst code version: H.1.
+Copyright 1997-2005 Omniture, Inc. More info available at https://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://www.nasdaq.com/includes/s_code-072016v1.js?v=03012016"></script>
+
+
+<script type="text/javascript" language="JavaScript">
+
+<!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script>
+
+<noscript><img
+src="https://nasdaq.122.2O7.net/b/ss/nasdaqprod/1/H.1--NS/0"
+height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.1. -->
+<!-- setSectionName() moved to js file: masthead_default.js -->
+
+
+<!--*********************End  ../includes/omniture.inc*******************************-->
+
+
+<script type="text/javascript">
+//<![CDATA[
+setSectionName(propVar);
+//]]>
+</script>
+
+<!-- Begin BlueKai Tag --> 
+<iframe name="__bkframe" height="0" width="0" frameborder="0" style="display:none;position:absolute;clip:rect(0px 0px 0px 0px)" src="about:blank"></iframe> 
+<script type="text/javascript" src="https://tags.bkrtx.com/js/bk-coretag.js"></script> 
+<script type="text/javascript">
+
+bk_addPageCtx('is_dartSite', (typeof(is_dartSite)!=='undefined')?is_dartSite:'');
+bk_addPageCtx('is_dartZone', (typeof(is_dartZone)!=='undefined')?is_dartZone:'');
+bk_addPageCtx('propVar', (typeof(propVar)!=='undefined')?propVar:'');
+bk_addPageCtx('propVar15', (typeof(propVar15)!=='undefined')?propVar15:'');
+bk_addPageCtx('SymbolType', (typeof(SymbolType)!=='undefined')?SymbolType:'');
+bk_addPageCtx('StockIndustry', (typeof(StockIndustry)!=='undefined')?StockIndustry:'');
+bk_addPageCtx('ArticlePrimaryCategory', (typeof(ArticlePrimaryCategory)!=='undefined')?ArticlePrimaryCategory:'');
+ 
+bk_doJSTag(31843, 1); 
+</script> 
+<!-- End BlueKai Tag -->
+
+<!-- begin Enerprise Florida survey -->
+<script>
+/*
+(function(){
+if(document.referrer=="https://www"+host_Extension+".nasdaq.com/markets/ipos/" 
+	&& document.location.href!="https://www"+host_Extension+".nasdaq.com/markets/ipos/"
+	&& get_cookie_value("EnterpriseFloridaSurvey")==false)
+{
+	set_cookie_value("EnterpriseFloridaSurvey","true",3);
+	(function(t,e,s,n){var o,c,a;t.SMCX=t.SMCX||[],e.getElementById(n)||(o=e.getElementsByTagName(s),c=o[o.length-1],a=e.createElement(s),a.type="text/javascript",a.async=!0,a.id=n,a.src=["https:"===location.protocol?"https://":"https://","widget.surveymonkey.com/collect/website/js/DrqdalJhvDd5ACgCO0mDpO1m7_2FEv_2BICPaYzBfwyQJ8_2BsY6t3mPJl0hh2FGypTiFu.js"].join(""),c.parentNode.insertBefore(a,c))})(window,document,"script","smcx-sdk");
+}
+else if(document.location.href=="https://www"+host_Extension+".nasdaq.com/markets/gold.aspx"
+	&& get_cookie_value("EnterpriseFloridaSurvey")==false)
+  {
+  set_cookie_value("EnterpriseFloridaSurvey","true",7);
+  (function(e,t,n,o){var s,c,i;e.SMCX=e.SMCX||[],t.getElementById(o)||(s=t.getElementsByTagName(n),c=s[s.length-1],i=t.createElement(n),i.type="text/javascript",i.async=!0,i.id=o,i.src=["https:"===location.protocol?"https://":"https://","widget.surveymonkey.com/collect/website/js/zlERY9yXVqREVYHr6ZdqhDNMqk2NLii_2Fefbn4hZPEGkz2TEDYuhOlBtXpQe_2FgiXz.js"].join(""),c.parentNode.insertBefore(i,c))})(window,document,"script","smcx-sdk");
+  }
+  })();
+  */
+
+  //deferred actions
+
+  //deferred actions
+  $(window).on('load', function () {
+  addScript("https://www.nasdaq.com/includes/nasdaqdeferred.min-04242018v1.js", true, "deferredActions()");
+  });
+
+</script>
+<!-- end Enterprise Florida survey -->
+
+<!-- end includes/fixedFooter.inc-->
+
+    <!-- START page bottom script -->
+	<script>
+	if(quoteBoxSelectedSymbol=="GLBL")
+	{
+		dynamicHTMLManager.appendHTML("<br/><br/><br/><a href='https://www.nasdaq.com/investing/glossary/r/return-of-captial'>*Return of capital</a>","dividenddata");
+	}
+	</script>
+	<!-- ************* begin includes/infolinks-ad.inc ********************** -->
+
+
+<!-- ************* end includes/infolinks-ad.inc ********************** -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "mainEntity":{
+            "@type":"Corporation",
+            "name":"AT&amp;T Inc.",
+            "tickerSymbol":"T"
+        },
+        "breadcrumb":{
+        "@type": "BreadcrumbList",
+        "itemListElement":
+        [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item":
+                {
+                    "@type": "WebPage",
+                    "@id": "https://www.nasdaq.com/",
+                    "name": "Home"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item":
+                {
+                    "@type": "WebPage",
+                    "@id": "https://www.nasdaq.com/quotes/",
+                    "name": "Quotes"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item":
+                {
+                    "@type": "WebPage",
+                    "@id": "https://www.nasdaq.com/symbol/t",
+                    "name": "Symbol"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "item":
+                {
+                    "@type": "WebPage",
+                    "@id": "https://www.nasdaq.com/quotes/dividend-history.aspx",
+                    "name": "Dividend History"
+                }
+            }
+        ]
+    }
+    }
+    </script>
+    <script>makeAd('3', '1x1', 'quotes', 'gutter_left', '', '');</script>
+	<!-- END page bottom script -->
+
+<noscript><img src="https://www.nasdaq.com/akam/10/pixel_1faa532b?a=dD00ZTgwOGJlYWRkM2NmNDU3NGM5NjU1YWJjM2JlMGEyODljYTA2YWFiJmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript></body>	
+</html>
