@@ -18,6 +18,7 @@ Sets the API key
 returns a list of Physical Currencies
 # alpha.getDigitalCurrencyList(boolean: force)
 returns a list of Digital Currencies
+
 **Note:** The above 2 function have a table format of key: "currency code" val: "name of currency". Also these functions also cache a file containing a list of currencies. Setting force to true will force the function to request a list of currencies again.
 # alpha.globalQuote(symbols)
 returns the current price and metadata of a stock or a table of stocks
