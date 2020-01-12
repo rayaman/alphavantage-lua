@@ -96,15 +96,15 @@ local function simpleparse(command,symbols,outputsize,interval)
 	if type(symbols)=="string" then
 		symbols = {symbols}
 	end
-	if outputsize then
-		outputsize = "&outputsize="..outputsize
-	end
 	local str = ""
+	if outputsize then
+		str = str .. "&outputsize=".. outputsize
+	end
 	if interval then
 		str = "&interval="..interval
 	end
 	for i=1,#symbols do
-		cmd = "https://www.alphavantage.co/query?function="..command.."&symbol="..symbols[i].."&datatype=csv&apikey="..alpha.APIKey..outputsize..str
+		cmd = "https://www.alphavantage.co/query?function="..command.."&symbol="..symbols[i].."&datatype=csv&apikey="..alpha.APIKey..str
 		dat = request(cmd)
 		if dat:find("Invalid API call") then
 			return nil, "Invalid API call"
